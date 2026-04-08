@@ -366,29 +366,6 @@ header {
     line-height: 1.8;
 }
 
-/* زر العودة */
-.back-button {
-    position: fixed;
-    top: var(--spacing-lg);
-    right: var(--spacing-lg);
-    background: var(--bg-primary);
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-lg);
-    transition: transform var(--transition-fast);
-    z-index: 1001;
-}
-
-.back-button:hover {
-    transform: scale(1.1);
-}
-
 /* قسم الحلقات */
 .episodes-grid {
     display: grid;
