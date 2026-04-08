@@ -185,8 +185,7 @@ header {
 
 .search-icon {
     position: absolute;
-    right: var(--spacing-md);
-    left: auto;
+    inset-inline-end: var(--spacing-md);
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-muted);
@@ -501,7 +500,7 @@ video {
 .back-to-top {
     position: fixed;
     bottom: calc(var(--spacing-xl) + 60px);
-    left: var(--spacing-lg);
+    inset-inline-end: var(--spacing-lg);
     background: var(--primary-color);
     color: white;
     border: none;
