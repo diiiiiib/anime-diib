@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="صفحة الحساب والإعدادات في ANIME_DIIB - إدارة حسابك والتحكم في الإعدادات.">
+  <title>الحساب والإعدادات - ANIME_DIIB</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body data-page="account">
+  <div class="app-topbar">
+    <div class="container topbar-content">
+      <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
+      <span class="topbar-tagline">إدارة حسابك وإعداداتك</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-content">
+      <h1 class="logo">الحساب والإعدادات</h1>
+      <p class="tagline">أدِر حسابك وتحكم في إعدادات التطبيق</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- قسم الحساب -->
+    <section class="section">
+      <h2 class="section-title">
+        <i class="fas fa-user-circle"></i>
+        بيانات الحساب
+      </h2>
+      <div class="account-card">
+        <div class="account-info">
+          <div class="account-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="account-details">
+            <h3>المستخدم</h3>
+            <p class="account-email" id="user-email">لم يتم تسجيل الدخول</p>
+            <p class="account-status" id="user-status">ضيف</p>
+          </div>
+        </div>
+        <button id="login-btn" class="action-btn" onclick="handleLogin()">
+          <i class="fas fa-sign-in-alt"></i> دخول
+        </button>
+      </div>
+    </section>
+
+    <!-- قسم الإعدادات -->
+    <section class="section">
+      <h2 class="section-title">
+        <i class="fas fa-cog"></i>
+        إعدادات التطبيق
+      </h2>
+      
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>الوضع الليلي</h3>
+            <p>تفعيل الوضع الداكن تلقائياً في الليل</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode(this.checked)">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>جودة الفيديو</h3>
+            <p>اختر جودة التشغيل الافتراضية</p>
+          </div>
+          <select id="video-quality" class="setting-select" onchange="setVideoQuality(this.value)">
+            <option value="auto">تلقائي</option>
+            <option value="720p">720p</option>
+            <option value="480p">480p</option>
+            <option value="360p">360p</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>التنبيهات</h3>
+            <p>استقبال التنبيهات عن الحلقات الجديدة</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="notifications-toggle" onchange="toggleNotifications(this.checked)">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>اللغة</h3>
+            <p>اختر لغة الواجهة</p>
+          </div>
+          <select id="language-select" class="setting-select" onchange="setLanguage(this.value)">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المراجع والمساعدة -->
+    <section class="section">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle"></i>
+        المساعدة والمراجع
+      </h2>
+      <div class="help-links">
+        <a href="#" class="help-item" onclick="showHelp('privacy'); return false;">
+          <i class="fas fa-shield-alt"></i>
+          <div class="help-text">
+            <h4>سياسة الخصوصية</h4>
+            <p>تعرف على كيفية حماية بيانتك</p>
+          </div>
+          <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <a href="#" class="help-item" onclick="showHelp('terms'); return false;">
+          <i class="fas fa-scroll"></i>
+          <div class="help-text">
+            <h4>شروط الاستخدام</h4>
+            <p>اقرأ الشروط والأحكام</p>
+          </div>
+          <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <a href="#" class="help-item" onclick="showHelp('about'); return false;">
+          <i class="fas fa-info-circle"></i>
+          <div class="help-text">
+            <h4>حول التطبيق</h4>
+            <p>معلومات عن ANIME_DIIB</p>
+          </div>
+          <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <a href="#" class="help-item" onclick="showHelp('contact'); return false;">
+          <i class="fas fa-envelope"></i>
+          <div class="help-text">
+            <h4>اتصل بنا</h4>
+            <p>أرسل لنا رسالة أو استفسار</p>
+          </div>
+          <i class="fas fa-chevron-left"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- قسم البيانات والتخزين -->
+    <section class="section">
+      <h2 class="section-title">
+        <i class="fas fa-database"></i>
+        البيانات والتخزين
+      </h2>
+      <div class="storage-info">
+        <div class="storage-item">
+          <span>حجم التخزين المستخدم</span>
+          <span id="storage-used">0 KB</span>
+        </div>
+        <div class="storage-bar">
+          <div id="storage-progress" class="storage-progress" style="width: 0%"></div>
+        </div>
+      </div>
+      <button id="clear-cache-btn" class="action-btn danger" onclick="clearCache()">
+        <i class="fas fa-trash"></i> مسح ذاكرة التخزين المؤقت
+      </button>
+    </section>
+
+    <!-- قسم تسجيل الخروج -->
+    <section class="section">
+      <button id="logout-btn" class="action-btn danger full-width" onclick="handleLogout()" style="display: none;">
+        <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+      </button>
+      <button id="app-version" class="secondary-text" style="background: none; border: none; cursor: default; width: 100%; text-align: center; padding: var(--spacing-md);">
+        الإصدار 1.0.0 • جميع الحقوق محفوظة © 2026
+      </button>
+    </section>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home nav-icon"></i>
+      <span class="nav-label">الرئيسية</span>
+    </a>
+    <a href="anime.html" class="nav-item">
+      <i class="fas fa-tv nav-icon"></i>
+      <span class="nav-label">مسلسلات</span>
+    </a>
+    <a href="movie.html" class="nav-item">
+      <i class="fas fa-film nav-icon"></i>
+      <span class="nav-label">أفلام</span>
+    </a>
+    <a href="account.html" class="nav-item active">
+      <i class="fas fa-user-circle nav-icon"></i>
+      <span class="nav-label">الحساب</span>
+    </a>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="performance.js"></script>
+  <script>
+    // دوال صفحة الحساب
+    function handleLogin() {
+      const email = prompt('أدخل بريدك الإلكتروني:');
+      if (email) {
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userData', JSON.stringify({
+          email: email,
+          status: 'مسجل دخول',
+          loginDate: new Date().toISOString()
+        }));
+        updateAccountInfo();
+        showToast('تم تسجيل الدخول بنجاح!');
+      }
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('userEmail');
+      localStorage.removeItem('userData');
+      updateAccountInfo();
+      showToast('تم تسجيل الخروج.');
+    }
+
+    function updateAccountInfo() {
+      const userEmail = document.getElementById('user-email');
+      const userStatus = document.getElementById('user-status');
+      const loginBtn = document.getElementById('login-btn');
+      const logoutBtn = document.getElementById('logout-btn');
+
+      const email = localStorage.getItem('userEmail');
+      if (email) {
+        userEmail.textContent = email;
+        userStatus.textContent = 'مسجل دخول';
+        loginBtn.style.display = 'none';
+        logoutBtn.style.display = 'block';
+      } else {
+        userEmail.textContent = 'لم يتم تسجيل الدخول';
+        userStatus.textContent = 'ضيف';
+        loginBtn.style.display = 'block';
+        logoutBtn.style.display = 'none';
+      }
+    }
+
+    function toggleDarkMode(enabled) {
+      localStorage.setItem('autoDarkMode', enabled);
+      showToast(enabled ? 'تم تفعيل الوضع الليلي التلقائي' : 'تم تعطيل الوضع الليلي التلقائي');
+    }
+
+    function setVideoQuality(quality) {
+      localStorage.setItem('videoQuality', quality);
+      showToast(`تم تعيين جودة الفيديو إلى: ${quality}`);
+    }
+
+    function toggleNotifications(enabled) {
+      localStorage.setItem('notificationsEnabled', enabled);
+      showToast(enabled ? 'تم تفعيل التنبيهات' : 'تم تعطيل التنبيهات');
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('appLanguage', lang);
+      showToast(`تم تغيير اللغة إلى ${lang === 'ar' ? 'العربية' : 'English'}`);
+    }
+
+    function showHelp(topic) {
+      const messages = {
+        'privacy': 'نحن نحمي خصوصيتك. لا نجمع بيانات شخصية دون موافقتك.',
+        'terms': 'شروطنا عادلة وتحمي حقوقك كمستخدم.',
+        'about': 'ANIME_DIIB - منصة مشاهدة الأنمي الحديثة والسريعة.',
+        'contact': 'للتواصل: contact@anime-diib.com'
+      };
+      showToast(messages[topic]);
+    }
+
+    function clearCache() {
+      if (confirm('هل تريد مسح ذاكرة التخزين المؤقت؟')) {
+        localStorage.clear();
+        sessionStorage.clear();
+        updateAccountInfo();
+        updateStorageInfo();
+        showToast('تم مسح ذاكرة التخزين المؤقت.');
+      }
+    }
+
+    function updateStorageInfo() {
+      const storageSize = new Blob(Object.values(localStorage)).size;
+      const storageMB = (storageSize / 1024).toFixed(2);
+      document.getElementById('storage-used').textContent = storageMB + ' KB';
+      const progress = Math.min((storageSize / (5 * 1024 * 1024)) * 100, 100);
+      document.getElementById('storage-progress').style.width = progress + '%';
+    }
+
+    // تحديث البيانات عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', () => {
+      updateAccountInfo();
+      updateStorageInfo();
+      
+      // تعيين القيم المحفوظة إلى الحقول
+      document.getElementById('dark-mode-toggle').checked = localStorage.getItem('autoDarkMode') === 'true';
+      document.getElementById('video-quality').value = localStorage.getItem('videoQuality') || 'auto';
+      document.getElementById('notifications-toggle').checked = localStorage.getItem('notificationsEnabled') !== 'false';
+      document.getElementById('language-select').value = localStorage.getItem('appLanguage') || 'ar';
+    });
+  </script>
+</body>
+</html>

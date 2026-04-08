@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأفلام - ANIME_DIIB</title>
+  <meta name="description" content="شاهد أفلام الأنمي الأفضل في ANIME_DIIB مع تصميم حديث وتجربة مشاهدة سلسة." />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body data-page="movie">
+  <div class="app-topbar">
+    <div class="container topbar-content">
+      <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
+      <span class="topbar-tagline">أفضل أفلام الأنمي في مكان واحد</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-content">
+      <h1 class="logo">الأفلام</h1>
+      <p class="tagline">تصميم عصري وتحميل سريع لكل فيلم.</p>
+      <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="ابحث عن فيلم...">
+        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2 id="page-title" class="section-title">الأفلام</h2>
+      <div id="category-container" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home nav-icon"></i>
+      <span class="nav-label">الرئيسية</span>
+    </a>
+    <a href="anime.html" class="nav-item">
+      <i class="fas fa-tv nav-icon"></i>
+      <span class="nav-label">مسلسلات</span>
+    </a>
+    <a href="movie.html" class="nav-item active">
+      <i class="fas fa-film nav-icon"></i>
+      <span class="nav-label">أفلام</span>
+    </a>
+    <a href="account.html" class="nav-item">
+      <i class="fas fa-user-circle nav-icon"></i>
+      <span class="nav-label">الحساب</span>
+    </a>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="performance.js"></script>
+</body>
+</html>
