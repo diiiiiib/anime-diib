@@ -12,8 +12,13 @@
 <body data-page="account">
   <div class="app-topbar">
     <div class="container topbar-content">
-      <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
-      <span class="topbar-tagline">إدارة حسابك وإعداداتك</span>
+      <a href="index.html" class="topbar-logo">
+        <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
+        <span>ANIME_DIIB</span>
+      </a>
+      <div class="user-profile">
+        <img id="topbar-user-avatar" data-avatar="user.png" alt="صورة المستخدم" class="user-avatar">
+      </div>
     </div>
   </div>
 
@@ -33,8 +38,16 @@
       </h2>
       <div class="account-card">
         <div class="account-info">
-          <div class="account-avatar">
-            <i class="fas fa-user"></i>
+          <div class="account-avatar-container">
+            <img id="account-avatar-img" class="account-avatar-img" alt="صورة الحساب" />
+            <div id="account-avatar-icon" class="account-avatar-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <label class="avatar-upload-btn" onclick="document.getElementById('avatar-input').click();">
+              <i class="fas fa-camera"></i>
+              <span>تغيير</span>
+            </label>
+            <input id="avatar-input" type="file" accept="image/*" style="display: none;" onchange="handleAvatarChange(this)" />
           </div>
           <div class="account-details">
             <h3>المستخدم</h3>
@@ -42,9 +55,12 @@
             <p class="account-status" id="user-status">ضيف</p>
           </div>
         </div>
-        <button id="login-btn" class="action-btn" onclick="handleLogin()">
-          <i class="fas fa-sign-in-alt"></i> دخول
-        </button>
+        <div id="account-login-form" class="account-actions">
+          <input id="username-input" class="login-input" type="text" placeholder="أدخل اسم المستخدم" aria-label="اسم المستخدم" />
+          <button id="login-btn" class="action-btn" type="button" onclick="handleLogin()">
+            <i class="fas fa-sign-in-alt"></i> تسجيل / دخول
+          </button>
+        </div>
       </div>
     </section>
 
@@ -204,49 +220,222 @@
   </nav>
 
   <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="main.js"></script>
   <script src="performance.js"></script>
   <script>
-    // دوال صفحة الحساب
+    const SUPABASE_URL = 'https://gzedyzcvmghyjvgdfict.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_oOftEW-b7QHB_9myt88qoA_GfLMyWoU';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
     function handleLogin() {
-      const email = prompt('أدخل بريدك الإلكتروني:');
-      if (email) {
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userData', JSON.stringify({
-          email: email,
-          status: 'مسجل دخول',
-          loginDate: new Date().toISOString()
-        }));
+      const usernameInput = document.getElementById('username-input');
+      const username = usernameInput?.value.trim();
+      if (!username) {
+        showToast('أدخل اسم مستخدم صالح.');
+        return;
+      }
+
+      if (SUPABASE_URL.includes('YOUR_PROJECT') || SUPABASE_ANON_KEY.includes('YOUR_ANON_KEY')) {
+        showToast('يرجى ضبط إعدادات Supabase في account.html.');
+        return;
+      }
+
+      toggleAccountControls(false);
+      loginWithUsername(username).finally(() => toggleAccountControls(true));
+    }
+
+    async function loginWithUsername(username) {
+      try {
+        const { data: existingUser, error: selectError } = await supabaseClient
+          .from('profiles')
+          .select('id,username,avatar_url')
+          .eq('username', username)
+          .maybeSingle();
+
+        if (selectError) {
+          console.error(selectError);
+          showToast('حدث خطأ أثناء التحقق من اسم المستخدم.');
+          return;
+        }
+
+        if (existingUser) {
+          saveUser(existingUser.username, existingUser.id, existingUser.avatar_url);
+          showToast('تم تسجيل الدخول بنجاح.');
+          updateAccountInfo();
+          return;
+        }
+
+        const { data: createdUser, error: insertError } = await supabaseClient
+          .from('profiles')
+          .insert([{ username }])
+          .select()
+          .maybeSingle();
+
+        if (insertError) {
+          console.error(insertError);
+          showToast('لم نتمكن من إنشاء الحساب. حاول اسم مستخدم آخر.');
+          return;
+        }
+
+        saveUser(createdUser.username, createdUser.id, null);
+        showToast('تم إنشاء الحساب وتسجيل الدخول.');
         updateAccountInfo();
-        showToast('تم تسجيل الدخول بنجاح!');
+      } catch (error) {
+        console.error(error);
+        showToast('حدث خطأ أثناء مزامنة الحساب.');
+      }
+    }
+
+    function saveUser(username, id, avatarUrl = null) {
+      const userData = {
+        username,
+        supabaseId: id || null,
+        status: 'مسجل دخول',
+        loginDate: new Date().toISOString(),
+        avatar: avatarUrl || null
+      };
+      localStorage.setItem('userData', JSON.stringify(userData));
+    }
+
+    function handleAvatarChange(input) {
+      const file = input.files[0];
+      if (!file) return;
+
+      const maxSize = 2 * 1024 * 1024; // 2MB
+      if (file.size > maxSize) {
+        showToast('حجم الصورة كبير جداً. الحد الأقصى 2 ميجابايت.');
+        return;
+      }
+
+      const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+      const username = userData.username;
+
+      if (!username) {
+        showToast('يرجى تسجيل الدخول أولاً.');
+        return;
+      }
+
+      toggleAccountControls(false);
+      uploadAvatarToSupabase(file, username).finally(() => toggleAccountControls(true));
+    }
+
+    async function uploadAvatarToSupabase(file, username) {
+      try {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${username}-${Date.now()}.${fileExt}`;
+        const filePath = `${username}/${fileName}`;
+
+        // رفع الصورة إلى Supabase Storage
+        const { data, error: uploadError } = await supabaseClient
+          .storage
+          .from('avatars')
+          .upload(filePath, file, { upsert: true });
+
+        if (uploadError) {
+          console.error(uploadError);
+          showToast('حدث خطأ أثناء رفع الصورة.');
+          return;
+        }
+
+        // الحصول على الرابط العام للصورة
+        const { data: { publicUrl } } = supabaseClient
+          .storage
+          .from('avatars')
+          .getPublicUrl(filePath);
+
+        // تحديث قاعدة البيانات بحفظ رابط الصورة
+        const { error: updateError } = await supabaseClient
+          .from('profiles')
+          .update({ avatar_url: publicUrl })
+          .eq('username', username);
+
+        if (updateError) {
+          console.error(updateError);
+          showToast('تم رفع الصورة لكن حدث خطأ في حفظ الرابط.');
+          return;
+        }
+
+        // تحديث بيانات المستخدم المحفوظة محلياً
+        const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+        userData.avatar = publicUrl;
+        localStorage.setItem('userData', JSON.stringify(userData));
+
+        updateAccountInfo();
+        showToast('تم تحديث صورة الحساب بنجاح.');
+      } catch (error) {
+        console.error(error);
+        showToast('حدث خطأ أثناء معالجة الصورة.');
       }
     }
 
     function handleLogout() {
-      localStorage.removeItem('userEmail');
       localStorage.removeItem('userData');
       updateAccountInfo();
       showToast('تم تسجيل الخروج.');
     }
 
+    function toggleAccountControls(enabled) {
+      const loginBtn = document.getElementById('login-btn');
+      const usernameInput = document.getElementById('username-input');
+      if (loginBtn) loginBtn.disabled = !enabled;
+      if (usernameInput) usernameInput.disabled = !enabled;
+    }
+
     function updateAccountInfo() {
       const userEmail = document.getElementById('user-email');
       const userStatus = document.getElementById('user-status');
-      const loginBtn = document.getElementById('login-btn');
       const logoutBtn = document.getElementById('logout-btn');
+      const loginForm = document.getElementById('account-login-form');
+      const avatarImg = document.getElementById('account-avatar-img');
+      const avatarIcon = document.getElementById('account-avatar-icon');
+      const topbarAvatar = document.getElementById('topbar-user-avatar');
 
-      const email = localStorage.getItem('userEmail');
-      if (email) {
-        userEmail.textContent = email;
+      const savedUser = localStorage.getItem('userData');
+      const userData = savedUser ? JSON.parse(savedUser) : null;
+
+      if (userData && userData.username) {
+        userEmail.textContent = userData.username;
         userStatus.textContent = 'مسجل دخول';
-        loginBtn.style.display = 'none';
-        logoutBtn.style.display = 'block';
+        loginForm.style.display = 'none';
+        if (logoutBtn) logoutBtn.style.display = 'block';
+        
+        // عرض صورة الحساب إذا كانت موجودة
+        if (userData.avatar) {
+          if (avatarImg) {
+            avatarImg.src = userData.avatar;
+            avatarImg.style.display = 'block';
+          }
+          if (avatarIcon) avatarIcon.style.display = 'none';
+          if (topbarAvatar) {
+            topbarAvatar.src = userData.avatar;
+            topbarAvatar.setAttribute('data-avatar', userData.avatar);
+          }
+        } else {
+          if (avatarImg) avatarImg.style.display = 'none';
+          if (avatarIcon) avatarIcon.style.display = 'flex';
+          if (topbarAvatar) {
+            topbarAvatar.src = '';
+            topbarAvatar.setAttribute('data-avatar', 'user.png');
+          }
+        }
       } else {
         userEmail.textContent = 'لم يتم تسجيل الدخول';
         userStatus.textContent = 'ضيف';
-        loginBtn.style.display = 'block';
-        logoutBtn.style.display = 'none';
+        loginForm.style.display = 'flex';
+        if (logoutBtn) logoutBtn.style.display = 'none';
+        if (avatarImg) avatarImg.style.display = 'none';
+        if (avatarIcon) avatarIcon.style.display = 'flex';
+        if (topbarAvatar) {
+          topbarAvatar.src = '';
+          topbarAvatar.setAttribute('data-avatar', 'user.png');
+        }
       }
+    }
+
+    function toggleDarkMode(enabled) {
+      localStorage.setItem('autoDarkMode', enabled);
+      showToast(enabled ? 'تم تفعيل الوضع الليلي التلقائي' : 'تم تعطيل الوضع الليلي التلقائي');
     }
 
     function toggleDarkMode(enabled) {
