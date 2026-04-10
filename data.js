@@ -5,42 +5,6 @@ const animes = [
 
 
   {
-    id: 3,
-    title: "المهمة الاخيرة",
-    type: "movie",
-    cover: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
-    background: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
-    description: "الفيلم يتناول قصة أنمي Hunter x Hunter في مغامرة مثيرة تدور حول المهمة الأخيرة التي يُطلب من مجموعة من الأبطال أن ينفذوا.",
-    genre: ["رومانسي", "دراما", "خيال"],
-    rating: "8.9",
-    year: "2013",
-    episodes: [
-      {
-        number: 1,
-        title: "الفيلم الكامل",
-        video: "https://archive.org/download/hhtlm/hhtlm.mp4"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Phantom rouge",
-    type: "movie",
-    cover: "https://play-lh.googleusercontent.com/dHOka0wr3nfS5Hk_WnyX5bULld33K_-q90V5HHK1E7KHdHL_rvjcbQXRdSfJorZBAauu=w240-h480-rw",
-    background: "https://play-lh.googleusercontent.com/dHOka0wr3nfS5Hk_WnyX5bULld33K_-q90V5HHK1E7KHdHL_rvjcbQXRdSfJorZBAauu=w240-h480-rw",
-    description: "فيلم Phantom Rouge هو فيلم أنمي يروي قصة مثيرة تدور حول شخصية غون فريكس، الذي يواجه تحديات جديدة في عالم الصيادين. يتناول الفيلم مغامرات غون وصديقه كيلوا زولديك أثناء مواجهتهما لأعداء جدد واكتشاف أسرار جديدة في عالم الصيادين.",
-    genre: ["مغامرة", "خيال", "عائلي"],
-    rating: "9.3",
-    year: "2013",
-    episodes: [
-      {
-        number: 1,
-        title: "الفيلم الكامل",
-        video: "https://archive.org/download/hxh1_20251109/hxh1.mp4"
-      }
-    ]
-  },
-  {
     id: 6,
     title: "قاتل الشياطين",
     type: "series",
@@ -237,7 +201,7 @@ const animes = [
     background: "https://a.storyblok.com/f/178900/1064x1596/d057641427/my-hero-academia-season-7-key-art-tall.png/m/filters:quality(95)format(webp)",
     description: "تدور القصة حول إيزوكو ميدوريا، صبي يولد بدون قوة خارقة في عالم حيث 80% من البشر يمتلكون قوى خارقة. يحلم إيزوكو بأن يصبح بطلاً مثل بطله المفضل \"أول مايت\".",
     genre: ["أكشن", "كوميديا", "خيال علمي"],
-    rating: "8.8",
+    rating: "9.1",
     year: "2016",
     episodes: [
       { number: 1, title: "الحلقة الأولى", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/1.mp4" },
@@ -346,7 +310,9 @@ const animes = [
       { number: 104, title: "الحلقة المئة واربعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000015.mp4" },
       { number: 105, title: "الحلقة المئة وخمسة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000016.mp4" },
       { number: 106, title: "الحلقة المئة وستة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000017.mp4" },
-      { number: 107, title: "الحلقة المئة والسبعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000018.mp4" }
+      { number: 107, title: "الحلقة المئة والسبعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000018.mp4" },
+      { number: 108, title: "الحلقة المئة والثمانية ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000019.mp4" },
+      { number: 109, title: "الحلقة المئة التاسعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000020.mp4" }
 
 
 
@@ -429,7 +395,8 @@ const animes = [
       { number: 57, title: "الحلقة السابعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2022.mp4" },
       { number: 58, title: "الحلقة الثامنة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2023.mp4" },
       { number: 59, title: "الحلقة التاسعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2024.mp4" },
-      { number: 60, title: "الحلقة االستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2025.mp4" }
+      { number: 60, title: "الحلقة االستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2025.mp4" },
+      { number: 61, title: "الحلقة الحادية والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2026.mp4" }
 
 
 
@@ -477,7 +444,7 @@ const animes = [
     background: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxgeB9XKCnPYR3Bx3kcBwGvx4wBW_fwaAMyQ&s",
     description: "تدور القصة حول جاسوس يجب عليه إنشاء عائلة مزيفة لإنجاز مهمة سرية. يتزوج من امرأة قاتلة محترفة وينتبل طفلة قادرة على قراءة الأفكار.",
     genre: ["كوميديا", "أكشن", "عائلي"],
-    rating: "8.9",
+    rating: "9.1",
     year: "2022",
     episodes: [
       { number: 1, title: "الحلقة الأولى", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/spyfamily/1.mp4" },
@@ -534,7 +501,7 @@ const animes = [
     description: "تدور القصة حول طالبين في المدرسة الثانوية، أحدهما شاب هادئ والآخر فتاة مشاغبة، يجدان نفسيهما في علاقة غير متوقعة.",
     genre: ["رومانسي", "دراما", "كوميديا"],
     rating: "8.5",
-    year: "2021",
+    year: "2026",
     episodes: [
       { number: 1, title: "الحلقة الأولى", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 1.mp4" },
       { number: 2, title: "الحلقة الثانية", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 2.mp4" },
@@ -602,8 +569,43 @@ const animes = [
       { number: 1, title: "الفيلم الكامل", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/kimetsu/knyic.mp4" }
     ]
   },
+  
   {
     id: 16,
+    title: "المهمة الاخيرة",
+    type: "movie",
+    cover: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
+    background: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
+    description: "الفيلم يتناول قصة أنمي Hunter x Hunter في مغامرة مثيرة تدور حول المهمة الأخيرة التي يُطلب من مجموعة من الأبطال أن ينفذوا.",
+    genre: ["رومانسي", "دراما", "خيال"],
+    rating: "8.9",
+    year: "2013",
+    episodes: [
+      {
+        number: 1,
+        title: "الفيلم الكامل",
+        video: "https://archive.org/download/hhtlm/hhtlm.mp4"}
+    ]
+  },
+  {
+    id: 17,
+    title: "Phantom rouge",
+    type: "movie",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVVvFTZLn3GNxD5SVCGyaQsQbs9_EuLFnrgqb_zORGyKXICYGMHTyF7dehVAczych1GbPDA&s=10",
+    background: "https://play-lh.googleusercontent.com/dHOka0wr3nfS5Hk_WnyX5bULld33K_-q90V5HHK1E7KHdHL_rvjcbQXRdSfJorZBAauu=w240-h480-rw",
+    description: "فيلم Phantom Rouge هو فيلم أنمي يروي قصة مثيرة تدور حول شخصية غون فريكس، الذي يواجه تحديات جديدة في عالم الصيادين. يتناول الفيلم مغامرات غون وصديقه كيلوا زولديك أثناء مواجهتهما لأعداء جدد واكتشاف أسرار جديدة في عالم الصيادين.",
+    genre: ["مغامرة", "خيال", "عائلي"],
+    rating: "9.3",
+    year: "2013",
+    episodes: [
+      {
+        number: 1,
+        title: "الفيلم الكامل",
+        video: "https://archive.org/download/hxh1_20251109/hxh1.mp4"}
+    ]
+  },
+  {
+    id: 18,
     title: "قطار اللانهاية",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/thumb/0/01/%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg/250px-%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg",
