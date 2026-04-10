@@ -12,8 +12,13 @@
 <body data-page="index">
   <div class="app-topbar">
     <div class="container topbar-content">
-      <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
-      <span class="topbar-tagline">موقعك المفضل لمشاهدة الأنمي</span>
+      <a href="index.html" class="topbar-logo">
+        <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
+        <span>ANIME_DIIB</span>
+      </a>
+      <div class="user-profile">
+        <img id="topbar-user-avatar" data-avatar="user.png" alt="صورة المستخدم" class="user-avatar">
+      </div>
     </div>
   </div>
 
@@ -99,5 +104,28 @@
   <script src="data.js"></script>
   <script src="main.js"></script>
   <script src="performance.js"></script>
+  <script>
+    // تحديث صورة المستخدم في الشريط العلوي
+    function updateUserAvatar() {
+      const topbarAvatar = document.getElementById('topbar-user-avatar');
+      const savedUser = localStorage.getItem('userData');
+      const userData = savedUser ? JSON.parse(savedUser) : null;
+      
+      if (userData && userData.avatar) {
+        if (topbarAvatar) {
+          topbarAvatar.src = userData.avatar;
+          topbarAvatar.setAttribute('data-avatar', userData.avatar);
+        }
+      } else {
+        if (topbarAvatar) {
+          topbarAvatar.src = '';
+          topbarAvatar.setAttribute('data-avatar', 'user.png');
+        }
+      }
+    }
+    
+    // تحديث الصورة عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', updateUserAvatar);
+  </script>
 </body>
 
