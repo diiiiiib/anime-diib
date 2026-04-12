@@ -574,7 +574,15 @@ const animes = [
       { number: 2, title: "الحلقة الثانية", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%202%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
       { number: 3, title: "الحلقة الثالثة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%203%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
       { number: 4, title: "الحلقة الرابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%204%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
-      { number: 5, title: "الحلقة الخامسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%205%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" }
+      { number: 5, title: "الحلقة الخامسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%205%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 6, title: "الحلقة السادسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%206%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 7, title: "الحلقة السابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%207%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 8, title: "الحلقة الثامنة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%208%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 9, title: "الحلقة التاسعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%209%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 10, title: "الحلقة العاشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2010%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 11, title: "الحلقة الحادي عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2011%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 12, title: "الحلقة الثانية عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2012%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" }
+
       
     ]
   },
