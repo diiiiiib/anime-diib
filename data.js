@@ -393,10 +393,10 @@ const animes = [
       { number: 55, title: "الحلقة الخامسة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2020.mp4" },
       { number: 56, title: "الحلقة السادسة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2021.mp4" },
       { number: 57, title: "الحلقة السابعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2022.mp4" },
-      { number: 58, title: "الحلقة الثامنة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%201.mp4" },
-      { number: 59, title: "الحلقة التاسعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%202.mp4" },
-      { number: 60, title: "الحلقة االستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%203.mp4" },
-      { number: 61, title: "الحلقة الحادية والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%204.mp4" }
+      { number: 58, title: "الحلقة الثامنة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2023.mp4" },
+      { number: 59, title: "الحلقة التاسعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2024.mp4" },
+      { number: 60, title: "الحلقة االستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2025.mp4" },
+      { number: 61, title: "الحلقة الحادية والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2026.mp4" }
 
 
 
@@ -555,8 +555,29 @@ const animes = [
       
     ]
   },
-  {
+
+   {
     id: 15,
+    title: "ري زيرو",
+    type: "series",
+    cover: "https://a.storyblok.com/f/178900/4700x6500/53d5978c9a/re-zero-starting-life-in-another-world-season-4-commemorative-illustration.jpg/m/filters:quality(95)format(webp)",
+    background: "https://a.storyblok.com/f/178900/4700x6500/53d5978c9a/re-zero-starting-life-in-another-world-season-4-commemorative-illustration.jpg/m/filters:quality(95)format(webp)",
+    description: "تدور القصة حول شاب يُدعى سوبارو ناتسوكي، يجد نفسه في عالم غريب بعد أن تم استدعاؤه بطريقة غير متوقعة. يكتشف أنه يمتلك القدرة على العودة بالزمن بعد وفاته، ويستخدم هذه القدرة لمحاولة حماية الأشخاص الذين يحبهم والتغلب على التحديات التي تواجهه.",
+    genre: ["رومانسي", "دراما", "اكشن"],
+    rating: "9.1",
+    year: "2026",
+    episodes: [
+      { number: 1, title: "الحلقة الأولى", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%201%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 2, title: "الحلقة الثانية", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%202%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 3, title: "الحلقة الثالثة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%203%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 4, title: "الحلقة الرابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%204%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 5, title: "الحلقة الخامسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%205%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" }
+      
+    ]
+  },
+
+  {
+    id: 16,
     title: "القلعة اللانهاية",
     type: "movie",
     cover: "https://pbs.twimg.com/media/GwT6K7QXoAAIIl6.jpg",
@@ -571,7 +592,7 @@ const animes = [
   },
   
   {
-    id: 16,
+    id: 17,
     title: "المهمة الاخيرة",
     type: "movie",
     cover: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
@@ -588,7 +609,7 @@ const animes = [
     ]
   },
   {
-    id: 17,
+    id: 18,
     title: "Phantom rouge",
     type: "movie",
     cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVVvFTZLn3GNxD5SVCGyaQsQbs9_EuLFnrgqb_zORGyKXICYGMHTyF7dehVAczych1GbPDA&s=10",
@@ -605,7 +626,7 @@ const animes = [
     ]
   },
   {
-    id: 18,
+    id: 19,
     title: "قطار اللانهاية",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/thumb/0/01/%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg/250px-%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg",
