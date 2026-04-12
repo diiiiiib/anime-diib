@@ -312,7 +312,10 @@ const animes = [
       { number: 106, title: "الحلقة المئة وستة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000017.mp4" },
       { number: 107, title: "الحلقة المئة والسبعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000018.mp4" },
       { number: 108, title: "الحلقة المئة والثمانية ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000019.mp4" },
-      { number: 109, title: "الحلقة المئة التاسعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000020.mp4" }
+      { number: 109, title: "الحلقة المئة التاسعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000020.mp4" },
+      { number: 110, title: "الحلقة المئة وعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000021.mp4" },
+      { number: 111, title: "111", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000022.mp4" }
+
 
 
 
