@@ -313,9 +313,8 @@ const animes = [
       { number: 107, title: "الحلقة المئة والسبعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000018.mp4" },
       { number: 108, title: "الحلقة المئة والثمانية ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000019.mp4" },
       { number: 109, title: "الحلقة المئة التاسعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000020.mp4" },
-      { number: 110, title: "الحلقة المئة وعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000021.mp4" },
-      { number: 111, title: "111", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000022.mp4" }
-
+      { number: 110, title: "الحلقة المئة والعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000021.mp4" },
+      { number: 111, title: "الحلقة المئة والحادية عشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000022.mp4" }
 
 
 
@@ -396,11 +395,19 @@ const animes = [
       { number: 55, title: "الحلقة الخامسة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2020.mp4" },
       { number: 56, title: "الحلقة السادسة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2021.mp4" },
       { number: 57, title: "الحلقة السابعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2022.mp4" },
-      { number: 58, title: "الحلقة الثامنة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2023.mp4" },
-      { number: 59, title: "الحلقة التاسعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2024.mp4" },
-      { number: 60, title: "الحلقة االستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2025.mp4" },
-      { number: 61, title: "الحلقة الحادية والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2026.mp4" }
-
+      { number: 58, title: "الحلقة الثامنة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%201.mp4" },
+      { number: 59, title: "الحلقة التاسعة والخمسون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%202.mp4" },
+      { number: 60, title: "الحلقة االستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%203.mp4" },
+      { number: 61, title: "الحلقة الحادية والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%204.mp4" },
+      { number: 62, title: "الحلقة الثانية والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%205.mp4" },
+      { number: 63, title: "الحلقة الثالثة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%206.mp4" },
+      { number: 64, title: "الحلقة الرابعة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%207.mp4" },
+      { number: 65, title: "الحلقة الخامسة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%208.mp4" },
+      { number: 66, title: "الحلقة السادسة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%209.mp4" },
+      { number: 67, title: "الحلقة السابعة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2010.mp4" },
+      { number: 68, title: "الحلقة الثامنة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2011.mp4" },
+      { number: 69, title: "الحلقة التاسعة والستون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2012.mp4" },
+      { number: 70, title: "الحلقة السبعون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/drs/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B3%D8%AA%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2013.mp4" }
 
 
 
@@ -515,7 +522,8 @@ const animes = [
       { number: 7, title: "الحلقة السابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 7.mp4" },
       { number: 8, title: "الحلقة اليامنة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 8.mp4" },
       { number: 9, title: "الحلقة التاسعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 9.mp4" },
-      { number: 10, title: "الحلقة العاشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 10.mp4" }
+      { number: 10, title: "الحلقة العاشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 10.mp4" },
+      { number: 11, title: "الحلقة الحادية عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/opposites/نقيضان 11.mp4" }
 
       
     ]
@@ -580,78 +588,122 @@ const animes = [
       { number: 8, title: "الحلقة الثامنة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%208%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
       { number: 9, title: "الحلقة التاسعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%209%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
       { number: 10, title: "الحلقة العاشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2010%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
-      { number: 11, title: "الحلقة الحادي عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2011%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 11, title: "الحلقة الحادية عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2011%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
       { number: 12, title: "الحلقة الثانية عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2012%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
-      { number: 13, title: "الحلقة التالثة عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2013%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" }
-
-      
+      { number: 13, title: "الحلقة الثالثة عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2013%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 14, title: "الحلقة الرابعة عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/rezero/%D8%B1%D9%8A%20%D8%B2%D9%8A%D8%B1%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%2014%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" }
     ]
   },
 
   {
     id: 16,
-    title: "القلعة اللانهاية",
-    type: "movie",
-    cover: "https://pbs.twimg.com/media/GwT6K7QXoAAIIl6.jpg",
-    background: "https://pbs.twimg.com/media/GwT6K7QXoAAIIl6.jpg",
-    description: "فيلم قاتل الشياطين: القلعة اللانهاية هو فيلم أنمي يروي قصة تانجيرو كامادو وأصدقائه في معركة ضد الشياطين في قلعة مظلمة.",
-    genre: ["أكشن", "رعب", "مغامرة"],
-    rating: "9.1",
-    year: "2020",
+    title: "ون بيس (نسخة واقعية)",
+    type: "series",
+    cover: "https://upload.wikimedia.org/wikipedia/ar/7/7e/%D9%85%D9%84%D8%B5%D9%82_%D9%85%D8%B3%D9%84%D8%B3%D9%84_%D9%88%D9%86_%D8%A8%D9%8A%D8%B3-2023.jpeg",
+    background: "https://upload.wikimedia.org/wikipedia/ar/7/7e/%D9%85%D9%84%D8%B5%D9%82_%D9%85%D8%B3%D9%84%D8%B3%D9%84_%D9%88%D9%86_%D8%A8%D9%8A%D8%B3-2023.jpeg",
+    description: "نسخة واقعية من ون بيس تعرض مغامرات لوفي وطاقمه في بحثهم عن الكنز الأسطوري.",
+    genre: ["أكشن", "مغامرة", "فانتازيا"],
+    rating: "8.0",
+    year: "2023",
     episodes: [
-      { number: 1, title: "الفيلم الكامل", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/kimetsu/knyic.mp4" }
+      { number: 1, title: "الحلقة الأولى", video: "https://archive.org/download/opla1/opla1.mp4" },
+      { number: 2, title: "الحلقة الثانية", video: "https://archive.org/download/opla1/opla2.mp4" },
+      { number: 3, title: "الحلقة الثالثة", video: "https://archive.org/download/opla1/opla3.mp4" },
+      { number: 4, title: "الحلقة الرابعة", video: "https://archive.org/download/opla1/opla4.mp4" },
+      { number: 5, title: "الحلقة الخامسة", video: "https://archive.org/download/opla1/opla5.mp4" },
+      { number: 6, title: "الحلقة السادسة", video: "https://archive.org/download/opla1/opla6.mp4" },
+      { number: 7, title: "الحلقة السابعة", video: "https://archive.org/download/opla1/opla7.mp4" }
+
     ]
   },
-  
   {
     id: 17,
-    title: "المهمة الاخيرة",
-    type: "movie",
-    cover: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
-    background: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
-    description: "الفيلم يتناول قصة أنمي Hunter x Hunter في مغامرة مثيرة تدور حول المهمة الأخيرة التي يُطلب من مجموعة من الأبطال أن ينفذوا.",
-    genre: ["رومانسي", "دراما", "خيال"],
-    rating: "8.9",
-    year: "2013",
+    title: "أفاتار : مسخر الهواء الأخير",
+    type: "series",
+    cover: "https://images.justwatch.com/poster/318249140/s332/season-2.jpg",
+    background: "https://images.justwatch.com/poster/318249140/s332/season-2.jpg",
+    description: "اشتقاق واقعي من أفاتار: مسخر الهواء الأخير يتابع قصة آنغ وأصدقائه في مواجهة أمة النار.",
+    genre: ["مغامرة", "خيال", "دراما"],
+    rating: "8.2",
+    year: "2024",
     episodes: [
-      {
-        number: 1,
-        title: "الفيلم الكامل",
-        video: "https://archive.org/download/hhtlm/hhtlm.mp4"}
+      { number: 1, title: "الحلقة الأولى", video: "https://archive.org/download/alab1/alab1.mp4" },
+      { number: 2, title: "الحلقة الثانية", video: "https://archive.org/download/alab1/alab2.mp4" },
+      { number: 3, title: "الحلقة الثالثة", video: "https://archive.org/download/alab1/alab3.mp4" },
+      { number: 4, title: "الحلقة الرابعة", video: "https://archive.org/download/alab1/alab4.mp4" },
+      { number: 5, title: "الحلقة الخامسة", video: "https://archive.org/download/alab1/alab5.mp4" },
+      { number: 6, title: "الحلقة السادسة", video: "https://archive.org/download/alab1/alab6.mp4" },
+      { number: 7, title: "الحلقة السابعة", video: "https://archive.org/download/alab1/alab7.mp4" },
     ]
   },
   {
     id: 18,
-    title: "Phantom rouge",
-    type: "movie",
-    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVVvFTZLn3GNxD5SVCGyaQsQbs9_EuLFnrgqb_zORGyKXICYGMHTyF7dehVAczych1GbPDA&s=10",
-    background: "https://play-lh.googleusercontent.com/dHOka0wr3nfS5Hk_WnyX5bULld33K_-q90V5HHK1E7KHdHL_rvjcbQXRdSfJorZBAauu=w240-h480-rw",
-    description: "فيلم Phantom Rouge هو فيلم أنمي يروي قصة مثيرة تدور حول شخصية غون فريكس، الذي يواجه تحديات جديدة في عالم الصيادين. يتناول الفيلم مغامرات غون وصديقه كيلوا زولديك أثناء مواجهتهما لأعداء جدد واكتشاف أسرار جديدة في عالم الصيادين.",
-    genre: ["مغامرة", "خيال", "عائلي"],
-    rating: "9.3",
-    year: "2013",
+    title: "كاوبوي بيبوب",
+    type: "series",
+    cover: "https://m.media-amazon.com/images/M/MV5BNzZkZDZhMWQtNzgyZi00NGQxLWE0ZWEtMWQ1OWNlMTNiNDJjXkEyXkFqcGc@._V1_.jpg",
+    background: "https://m.media-amazon.com/images/M/MV5BNzZkZDZhMWQtNzgyZi00NGQxLWE0ZWEtMWQ1OWNlMTNiNDJjXkEyXkFqcGc@._V1_.jpg",
+    description: "مسلسل واقعي يقتبس سلسلة Cowboy Bebop ويتابع طاقم صيادي الجوائز في مغامرات فضائية خطيرة.",
+    genre: ["أكشن", "خيال علمي", "مغامرة"],
+    rating: "8.1",
+    year: "2021",
     episodes: [
-      {
-        number: 1,
-        title: "الفيلم الكامل",
-        video: "https://archive.org/download/hxh1_20251109/hxh1.mp4"}
+      { number: 1, title: "الحلقة الأولى", video: "https://archive.org/download/cb9_20251208/cb1.mp4" },
+      { number: 2, title: "الحلقة الثانية", video: "https://archive.org/download/cb9_20251208/cb2.mp4" },
+      { number: 3, title: "الحلقة الثالثة", video: "https://archive.org/download/cb9_20251208/cb3.mp4" },
+      { number: 4, title: "الحلقة الرابعة", video: "https://archive.org/download/cb9_20251208/cb4.mp4" },
+      { number: 5, title: "الحلقة الخامسة", video: "https://archive.org/download/cb9_20251208/cb5.mp4" },
+      { number: 6, title: "الحلقة السادسة", video: "https://archive.org/download/cb9_20251208/cb6.mp4" },
+      { number: 7, title: "الحلقة السابعة", video: "https://archive.org/download/cb9_20251208/cb7.mp4" }
     ]
   },
   {
     id: 19,
-    title: "قطار اللانهاية",
-    type: "movie",
-    cover: "https://upload.wikimedia.org/wikipedia/ar/thumb/0/01/%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg/250px-%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg",
-    background: "https://upload.wikimedia.org/wikipedia/ar/thumb/0/01/%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg/250px-%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg",
-    description: "فيلم قاتل الشياطين: قطار اللانهاية هو فيلم أنمي يروي قصة تانجيرو كامادو وأصدقائه في معركة على متن قطار ملعون.",
-    genre: ["أكشن", "رعب", "مغامرة"],
-    rating: "9.0",
-    year: "2020",
+    title: "السيف والرقعة الحاسمة",
+    type: "series",
+    cover: "https://cdn.spacetoongo.com/%D8%A7%D9%84%D8%B3%D9%8A%D9%81%20%D9%88%D8%A7%D9%84%D8%B1%D9%82%D8%B9%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%85%D8%A9/%D8%A7%D9%84%D8%B3%D9%8A%D9%81%20%D9%88%D8%A7%D9%84%D8%B1%D9%82%D8%B9%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%85%D8%A9.jpg",
+    background: "https://cdn.spacetoongo.com/%D8%A7%D9%84%D8%B3%D9%8A%D9%81%20%D9%88%D8%A7%D9%84%D8%B1%D9%82%D8%B9%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%85%D8%A9/%D8%A7%D9%84%D8%B3%D9%8A%D9%81%20%D9%88%D8%A7%D9%84%D8%B1%D9%82%D8%B9%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%85%D8%A9.jpg",
+    description: "مسلسل واقعي جديد بعنوان السيف والرقعة الحاسمة يقدم قصة قتالية مشوقة وعالم مليء بالتحديات.",
+    genre: ["أكشن", "تشويق", "دراما"],
+    rating: "8.3",
+    year: "2025",
     episodes: [
-      { number: 1, title: "الفيلم الكامل", video: "https://archive.org/download/dsit_20251015/dsit.mp4" }
+      { number: 1, title: "الحلقة الأولى", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/01.mp4" },
+      { number: 2, title: "الحلقة الثانية", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/02.mp4" },
+      { number: 3, title: "الحلقة الثالثة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/03.mp4" },
+      { number: 4, title: "الحلقة الرابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/04.mp4" },
+      { number: 5, title: "الحلقة الخامسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/05.mp4" },
+      { number: 6, title: "الحلقة السادسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/06.mp4" },
+      { number: 7, title: "الحلقة السابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/07.mp4" },
+      { number: 8, title: "الحلقة الثامنة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/08.mp4" },
+      { number: 9, title: "الحلقة التاسعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/09.mp4" },
+      { number: 10, title: "الحلقة العاشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/10.mp4" },
+      { number: 11, title: "الحلقة الحادية عشرة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/ro93a/11.mp4" }
+    ]
+  },
+  {
+    id: 20,
+    title: "جنة الجحيم",
+    type: "series",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHjk5gPqPwPND-Nv469Bgijokaeg4Anhsz4w&s",
+    background: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHjk5gPqPwPND-Nv469Bgijokaeg4Anhsz4w&s",
+    description: "مسلسل جنة الجحيم يروي قصة مثيرة في عالم مليء بالتحديات والصراعات.",
+    genre: ["أكشن", "دراما", "تشويق"],
+    rating: "8.0",
+    year: "2024",
+    episodes: [
+      { number: 1, title: "الحلقة الأولى", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%201%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 2, title: "الحلقة الثانية", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%202%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 3, title: "الحلقة الثالثة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%203%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 4, title: "الحلقة الرابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%204%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 5, title: "الحلقة الخامسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%205%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 6, title: "الحلقة السادسة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%206%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 7, title: "الحلقة السابعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%207%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 8, title: "الحلقة الثامنة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%208%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" },
+      { number: 9, title: "الحلقة التاسعة", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/jogoku/%D8%AC%D9%8A%D8%AC%D9%88%D9%83%D9%88%D8%B1%D8%A7%D9%83%D9%88%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%209%20%D9%85%D8%AF%D8%A8%D9%84%D8%AC%D8%A9.mp4" }
     ]
   },
 ];
+
 
 // دالة للحصول على أنمي بواسطة المعرف
 function getAnimeById(id) {
@@ -665,7 +717,7 @@ function getSeries() {
 
 // دالة للحصول على جميع الأفلام
 function getMovies() {
-  return animes.filter(anime => anime.type === 'movie');
+  return []; // الأفلام الآن في movies.js
 }
 
 // دالة للبحث عن أنمي بالاسم
@@ -686,10 +738,7 @@ function searchSeries(query) {
 
 // دالة للبحث عن الأفلام فقط
 function searchMovies(query) {
-  const lowerQuery = query.toLowerCase();
-  return getMovies().filter(anime =>
-    anime.title.toLowerCase().includes(lowerQuery)
-  );
+  return []; // الأفلام الآن في movies.js
 }
 
 // دالة للحصول على حلقة محددة من أنمي معين
@@ -699,11 +748,7 @@ function getEpisode(animeId, episodeNumber) {
   return anime.episodes.find(ep => ep.number === parseInt(episodeNumber));
 }
 
-
-
-
-
-
-
-
-
+// تصدير المتغيرات والدوال
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { animes, getAnimeById, getSeries, getMovies, searchAnime, searchSeries, searchMovies, getEpisode };
+}

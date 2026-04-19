@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الأفلام - ANIME_DIIB</title>
-  <meta name="description" content="شاهد أفلام الأنمي الأفضل في ANIME_DIIB مع تصميم حديث وتجربة مشاهدة سلسة." />
+  <title>غرفة الدردشة - ANIME_DIIB</title>
+  <meta name="description" content="غرفة الدردشة في ANIME_DIIB - تحدث مع الأصدقاء أو انضم إلى الغرفة العامة." />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body data-page="movie">
+<body data-page="chatroom">
   <div class="app-topbar">
     <div class="container topbar-content">
       <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
-      <span class="topbar-tagline">أفضل أفلام الأنمي في مكان واحد</span>
+      <span class="topbar-tagline">مكان المحادثات العامة والخاصة</span>
       <div class="topbar-actions">
         <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
           <i class="fas fa-bell"></i>
@@ -24,30 +24,34 @@
 
   <header>
     <div class="container header-content">
-      <h1 class="logo">الأفلام</h1>
-  
-     <script>
-  atOptions = {
-    'key' : '5d5ede8a234cbbc5e66bf3fba209a79e',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/5d5ede8a234cbbc5e66bf3fba209a79e/invoke.js"></script>
-
+      <h1 class="logo">غرفة الدردشة</h1>
       <div class="search-container">
-        <input type="text" id="search-input" class="search-input" placeholder="ابحث عن فيلم...">
-        <i class="fas fa-search search-icon" aria-hidden="true"></i>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="section">
-      <h2 id="page-title" class="section-title">الأفلام</h2>
-      <div id="category-container" class="cards-grid"></div>
+    <section class="section chatroom-section">
+      <div class="chatroom-header">
+        <div>
+          <span id="chatroom-type" class="chatroom-type">غرفة عامة</span>
+          <h2 id="chatroom-title">الدردشة العامة</h2>
+          <p id="chatroom-description">تحدث مع الجميع في غرفة دردشة عامة متاحة الآن.</p>
+        </div>
+        <a href="chat.html" class="action-btn">
+          <i class="fas fa-arrow-right"></i>
+          العودة
+        </a>
+      </div>
+
+      <div id="chat-messages" class="chat-messages"></div>
+
+      <form class="chat-input-form" onsubmit="event.preventDefault(); handleSendMessage();">
+        <input id="chat-message-input" class="chat-input" type="text" placeholder="اكتب رسالة..." aria-label="اكتب رسالة" />
+        <button class="action-btn" type="submit">
+          <i class="fas fa-paper-plane"></i> إرسال
+        </button>
+      </form>
     </section>
   </main>
 
@@ -64,7 +68,7 @@
       <i class="fas fa-tv nav-icon"></i>
       <span class="nav-label">مسلسلات</span>
     </a>
-    <a href="movie.html" class="nav-item active">
+    <a href="movie.html" class="nav-item">
       <i class="fas fa-film nav-icon"></i>
       <span class="nav-label">أفلام</span>
     </a>
@@ -77,6 +81,7 @@
       <span class="nav-label">الحساب</span>
     </a>
   </nav>
+
   <script src="data.js"></script>
   <script src="movies.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>

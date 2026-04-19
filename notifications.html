@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="صفحة الإشعارات في ANIME_DIIB - تابع التنبيهات المهمة لحسابك.">
+  <title>الإشعارات - ANIME_DIIB</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</head>
+<body data-page="notifications">
+  <div class="app-topbar">
+    <div class="container topbar-content">
+      <a href="index.html" class="topbar-logo">
+        <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
+        <span>ANIME_DIIB</span>
+      </a>
+      <div class="topbar-actions">
+        <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
+          <i class="fas fa-bell"></i>
+        </a>
+        <div class="user-profile">
+          <img id="topbar-user-avatar" data-avatar="user.png" alt="صورة المستخدم" class="user-avatar">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <h1><i class="fas fa-bell" style="margin-left: 0.5rem;"></i>الإشعارات</h1>
+      </div>
+      <p class="section-subtitle">هنا يمكنك متابعة التنبيهات الجديدة الخاصة بك والحصول على آخر التحديثات من ANIME_DIIB. ستظهر هنا إشعارات الأنميات الجديدة والتحديثات المهمة.</p>
+      <div class="notifications-list" id="notifications-list">
+        <!-- الإشعارات ستُضاف هنا ديناميكياً -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // دالة لإنشاء إشعار
+    function createNotification(title, body, time, link = null, isNew = false) {
+      const notificationCard = document.createElement('div');
+      notificationCard.className = 'notification-card';
+
+      if (isNew) {
+        notificationCard.classList.add('new-notification');
+      }
+
+      const titleElement = document.createElement('div');
+      titleElement.className = 'notification-title';
+      if (isNew) {
+        titleElement.innerHTML = `<i class="fas fa-circle" style="color: #ff4757; font-size: 0.5rem; margin-left: 0.5rem;"></i>${title}`;
+      } else {
+        titleElement.textContent = title;
+      }
+
+      const bodyElement = document.createElement('div');
+      bodyElement.className = 'notification-body';
+      bodyElement.textContent = body;
+
+      const timeElement = document.createElement('div');
+      timeElement.className = 'notification-time';
+      timeElement.textContent = time;
+
+      notificationCard.appendChild(titleElement);
+      notificationCard.appendChild(bodyElement);
+      notificationCard.appendChild(timeElement);
+
+      if (link) {
+        notificationCard.style.cursor = 'pointer';
+        notificationCard.addEventListener('click', () => {
+          window.location.href = link;
+        });
+      }
+
+      return notificationCard;
+    }
+
+    // دالة لتحميل الإشعارات
+    function loadNotifications() {
+      const notificationsList = document.getElementById('notifications-list');
+
+      // إضافة إشعار ترحيبي
+      const welcomeNotification = createNotification(
+        'مرحباً بك في ANIME_DIIB',
+        'تم إنشاء صفحة الإشعارات الجديدة لتعرض لك أهم التنبيهات والعروض الخاصة.',
+        'قبل 5 دقائق',
+        null,
+        true
+      );
+      notificationsList.appendChild(welcomeNotification);
+
+      // فرز الأنميات حسب السنة (الأحدث أولاً)
+      const sortedAnimes = animes.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+      // إضافة إشعارات للأنميات الجديدة (أحدث 5 أنميات)
+      const recentAnimes = sortedAnimes.slice(0, 5);
+      recentAnimes.forEach((anime, index) => {
+        const notification = createNotification(
+          `أنمي جديد: ${anime.title}`,
+          `تم إضافة ${anime.title} (${anime.year}) إلى الموقع. ${anime.description.substring(0, 100)}...`,
+          `جديد في ${anime.year}`,
+          `details.html?id=${anime.id}`,
+          index < 2 // أول اثنين جديدين
+        );
+        notificationsList.appendChild(notification);
+      });
+
+      // إضافة إشعار تجريبي إذا لم تكن هناك إشعارات كافية
+      if (notificationsList.children.length < 3) {
+        const testNotification = createNotification(
+          'إشعار تجريبي',
+          'ستظهر هنا التنبيهات الفعلية عندما تتوفر تحديثات أو رسائل مهمة لحسابك.',
+          'قبل ساعة'
+        );
+        notificationsList.appendChild(testNotification);
+      }
+
+      // إضافة حالة فارغة إذا لم تكن هناك إشعارات
+      if (notificationsList.children.length === 0) {
+        const emptyState = document.createElement('div');
+        emptyState.className = 'empty-state';
+        emptyState.innerHTML = `
+          <i class="fas fa-bell-slash" style="font-size: 3rem; opacity: 0.5; margin-bottom: 1rem;"></i>
+          <h3>لا توجد إشعارات جديدة</h3>
+          <p>ستظهر هنا الإشعارات عندما تتوفر تحديثات أو رسائل مهمة.</p>
+        `;
+        notificationsList.appendChild(emptyState);
+      }
+    }
+
+    // تحميل الإشعارات عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', loadNotifications);
+  </script>
+  <script>
+    // تحديث صورة المستخدم في الشريط العلوي
+    function updateUserAvatar() {
+      const topbarAvatar = document.getElementById('topbar-user-avatar');
+      const savedUser = localStorage.getItem('userData');
+      const userData = savedUser ? JSON.parse(savedUser) : null;
+      
+      if (userData && userData.avatar) {
+        if (topbarAvatar) {
+          topbarAvatar.src = userData.avatar;
+          topbarAvatar.setAttribute('data-avatar', userData.avatar);
+        }
+      } else {
+        if (topbarAvatar) {
+          topbarAvatar.src = '';
+          topbarAvatar.setAttribute('data-avatar', 'user.png');
+        }
+      }
+    }
+    
+    // تحديث الصورة عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+      updateUserAvatar();
+      if (typeof initTheme === 'function') {
+        initTheme();
+      }
+    });
+  </script>
+</body>
+</html>

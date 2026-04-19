@@ -16,8 +16,13 @@
         <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
         <span>ANIME_DIIB</span>
       </a>
-      <div class="user-profile">
-        <img id="topbar-user-avatar" data-avatar="user.png" alt="صورة المستخدم" class="user-avatar">
+      <div class="topbar-actions">
+        <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
+          <i class="fas fa-bell"></i>
+        </a>
+        <div class="user-profile">
+          <img id="topbar-user-avatar" data-avatar="user.png" alt="صورة المستخدم" class="user-avatar">
+        </div>
       </div>
     </div>
   </div>
@@ -213,6 +218,10 @@
       <i class="fas fa-film nav-icon"></i>
       <span class="nav-label">أفلام</span>
     </a>
+    <a href="chat.html" class="nav-item">
+      <i class="fas fa-comments nav-icon"></i>
+      <span class="nav-label">الدردشات</span>
+    </a>
     <a href="account.html" class="nav-item active">
       <i class="fas fa-user-circle nav-icon"></i>
       <span class="nav-label">الحساب</span>
@@ -224,11 +233,26 @@
   <script src="main.js"></script>
   <script src="performance.js"></script>
   <script>
-    const SUPABASE_URL = 'https://gzedyzcvmghyjvgdfict.supabase.co';
-    const SUPABASE_ANON_KEY = 'sb_publishable_oOftEW-b7QHB_9myt88qoA_GfLMyWoU';
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // انتظار تحميل supabaseClient
+    function waitForSupabaseClient() {
+      return new Promise((resolve) => {
+        if (typeof supabaseClient !== 'undefined') {
+          resolve();
+        } else {
+          const checkInterval = setInterval(() => {
+            if (typeof supabaseClient !== 'undefined') {
+              clearInterval(checkInterval);
+              resolve();
+            }
+          }, 50);
+        }
+      });
+    }
 
-    function handleLogin() {
+    // استخدام supabaseClient من main.js
+    async function handleLogin() {
+      await waitForSupabaseClient();
+
       const usernameInput = document.getElementById('username-input');
       const username = usernameInput?.value.trim();
       if (!username) {
@@ -236,8 +260,8 @@
         return;
       }
 
-      if (SUPABASE_URL.includes('YOUR_PROJECT') || SUPABASE_ANON_KEY.includes('YOUR_ANON_KEY')) {
-        showToast('يرجى ضبط إعدادات Supabase في account.html.');
+      if (!supabaseClient) {
+        showToast('خطأ في الاتصال بقاعدة البيانات. تحقق من إعدادات Supabase.');
         return;
       }
 
@@ -435,37 +459,131 @@
 
     function toggleDarkMode(enabled) {
       localStorage.setItem('autoDarkMode', enabled);
-      showToast(enabled ? 'تم تفعيل الوضع الليلي التلقائي' : 'تم تعطيل الوضع الليلي التلقائي');
-    }
+      localStorage.setItem('animeTheme', enabled ? 'dark' : 'light');
+      document.documentElement.dataset.theme = enabled ? 'dark' : 'light';
 
-    function toggleDarkMode(enabled) {
-      localStorage.setItem('autoDarkMode', enabled);
+      // تحديث أيقونة زر تبديل الثيم إذا كان موجوداً
+      const icon = document.querySelector('.theme-toggle i');
+      if (icon) {
+        icon.className = enabled ? 'fas fa-sun' : 'fas fa-moon';
+      }
+
       showToast(enabled ? 'تم تفعيل الوضع الليلي التلقائي' : 'تم تعطيل الوضع الليلي التلقائي');
     }
 
     function setVideoQuality(quality) {
       localStorage.setItem('videoQuality', quality);
-      showToast(`تم تعيين جودة الفيديو إلى: ${quality}`);
+
+      // تطبيق جودة الفيديو على مشغل الفيديو إذا كان موجوداً
+      const video = document.getElementById('video-player');
+      if (video) {
+        // حفظ الجودة المفضلة للمستخدم
+        video.dataset.quality = quality;
+      }
+
+      showToast(`تم تعيين جودة الفيديو إلى: ${quality === 'auto' ? 'تلقائي' : quality}`);
     }
 
     function toggleNotifications(enabled) {
       localStorage.setItem('notificationsEnabled', enabled);
-      showToast(enabled ? 'تم تفعيل التنبيهات' : 'تم تعطيل التنبيهات');
+
+      // طلب إذن الإشعارات إذا كان متاحاً
+      if (enabled && 'Notification' in window) {
+        if (Notification.permission === 'default') {
+          Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+              showToast('تم تفعيل التنبيهات');
+            } else {
+              showToast('تم رفض إذن الإشعارات');
+            }
+          });
+        } else if (Notification.permission === 'granted') {
+          showToast('تم تفعيل التنبيهات');
+        } else {
+          showToast('الإشعارات معطلة في إعدادات المتصفح');
+        }
+      } else {
+        showToast(enabled ? 'تم تفعيل التنبيهات' : 'تم تعطيل التنبيهات');
+      }
     }
 
     function setLanguage(lang) {
       localStorage.setItem('appLanguage', lang);
+
+      // تحديث اتجاه الصفحة ولغة HTML
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
       showToast(`تم تغيير اللغة إلى ${lang === 'ar' ? 'العربية' : 'English'}`);
     }
 
     function showHelp(topic) {
-      const messages = {
-        'privacy': 'نحن نحمي خصوصيتك. لا نجمع بيانات شخصية دون موافقتك.',
-        'terms': 'شروطنا عادلة وتحمي حقوقك كمستخدم.',
-        'about': 'ANIME_DIIB - منصة مشاهدة الأنمي الحديثة والسريعة.',
-        'contact': 'للتواصل: contact@anime-diib.com'
+      const helpContent = {
+        'privacy': `
+          <h3>سياسة الخصوصية</h3>
+          <p>في ANIME_DIIB، نحن نلتزم بحماية خصوصيتك وبياناتك الشخصية. إليك سياسة الخصوصية الخاصة بنا:</p>
+          <ul>
+            <li>نحن نجمع فقط البيانات الضرورية لتحسين تجربتك في استخدام التطبيق</li>
+            <li>لا نشارك بياناتك مع أطراف ثالثة دون موافقتك الصريحة</li>
+            <li>يتم تشفير جميع بياناتك الشخصية لحمايتها من الوصول غير المصرح به</li>
+            <li>يمكنك طلب حذف بياناتك في أي وقت من خلال قسم الحساب</li>
+            <li>نستخدم ملفات تعريف الارتباط لتحسين أداء التطبيق وتخصيص المحتوى</li>
+          </ul>
+          <p>آخر تحديث: يناير 2026</p>
+        `,
+        'terms': `
+          <h3>شروط الاستخدام</h3>
+          <p>باستخدامك لتطبيق ANIME_DIIB، فإنك توافق على الالتزام بالشروط التالية:</p>
+          <ul>
+            <li>يُمنع استخدام التطبيق لأي أغراض غير قانونية أو مخالفة للقوانين المحلية والدولية</li>
+            <li>جميع المحتويات محمية بحقوق الملكية الفكرية ولا يُسمح بنسخها أو توزيعها دون إذن</li>
+            <li>نحتفظ بالحق في تعديل أو إيقاف الخدمة في أي وقت دون إشعار مسبق</li>
+            <li>أنت مسؤول عن الحفاظ على سرية حسابك وكلمة المرور الخاصة بك</li>
+            <li>يُمنع محاولة اختراق النظام أو التدخل في عمله بأي شكل من الأشكال</li>
+          </ul>
+          <p>آخر تحديث: يناير 2026</p>
+        `,
+        'about': `
+          <h3>حول التطبيق</h3>
+          <p>ANIME_DIIB هو تطبيق متخصص في عرض ومشاهدة الأنمي والرسوم المتحركة اليابانية. نقدم تجربة مشاهدة ممتعة وسلسة مع ميزات متعددة:</p>
+          <ul>
+            <li>مكتبة ضخمة من الأنمي والأفلام المترجمة</li>
+            <li>جودة عالية مع خيارات متعددة للعرض</li>
+            <li>واجهة مستخدم سهلة ومريحة</li>
+            <li>إمكانية إنشاء قوائم المشاهدة المفضلة</li>
+            <li>تحديثات مستمرة لأحدث الحلقات والأعمال</li>
+          </ul>
+          <p>الإصدار الحالي: 1.0.0</p>
+          <p>جميع الحقوق محفوظة © 2026 ANIME_DIIB</p>
+        `,
+        'contact': `
+          <h3>اتصل بنا</h3>
+          <p>نرحب بجميع استفساراتك ومقترحاتك. يمكنك التواصل معنا عبر:</p>
+          <ul>
+            <li>البريد الإلكتروني: contact@anime-diib.com</li>
+            <li>تويتر: @ANIME_DIIB</li>
+            <li>فيسبوك: facebook.com/ANIMEDIIB</li>
+            <li>تيليجرام: t.me/ANIME_DIIB</li>
+          </ul>
+          <p>نحاول الرد على جميع الاستفسارات خلال 24-48 ساعة عمل.</p>
+        `
       };
-      showToast(messages[topic]);
+
+      // إنشاء نافذة منبثقة لعرض المحتوى
+      const modal = document.createElement('div');
+      modal.className = 'help-modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <button class="modal-close" onclick="this.closest('.help-modal').remove()">&times;</button>
+          <div class="modal-body">
+            ${helpContent[topic]}
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      // إضافة تأثير الظهور
+      setTimeout(() => modal.classList.add('show'), 10);
     }
 
     function clearCache() {
@@ -492,10 +610,27 @@
       updateStorageInfo();
       
       // تعيين القيم المحفوظة إلى الحقول
-      document.getElementById('dark-mode-toggle').checked = localStorage.getItem('autoDarkMode') === 'true';
+      const autoDarkMode = localStorage.getItem('autoDarkMode') === 'true';
+      const savedTheme = localStorage.getItem('animeTheme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      document.getElementById('dark-mode-toggle').checked = autoDarkMode;
       document.getElementById('video-quality').value = localStorage.getItem('videoQuality') || 'auto';
       document.getElementById('notifications-toggle').checked = localStorage.getItem('notificationsEnabled') !== 'false';
       document.getElementById('language-select').value = localStorage.getItem('appLanguage') || 'ar';
+
+      // تطبيق الثيم المحفوظ
+      document.documentElement.dataset.theme = savedTheme;
+
+      // تحديث أيقونة زر تبديل الثيم إذا كان موجوداً
+      const icon = document.querySelector('.theme-toggle i');
+      if (icon) {
+        icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+
+      // تطبيق اللغة المحفوظة
+      const savedLang = localStorage.getItem('appLanguage') || 'ar';
+      document.documentElement.lang = savedLang;
+      document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
     });
   </script>
 </body>
