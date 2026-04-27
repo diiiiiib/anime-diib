@@ -315,7 +315,9 @@ const animes = [
       { number: 109, title: "الحلقة المئة التاسعة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000020.mp4" },
       { number: 110, title: "الحلقة المئة والعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000021.mp4" },
       { number: 111, title: "الحلقة المئة والحاديةعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000022.mp4" },
-      { number: 112, title: "الحلقة المئة والثانيةعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000023.mp4" }
+      { number: 112, title: "الحلقة المئة والثانيةعشرة ", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000023.mp4" },
+      { number: 113, title: "الحلقة 24 الموسم 5", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/myhero/000024.mp4" }
+
 
 
 
