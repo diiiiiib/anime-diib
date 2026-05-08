@@ -501,7 +501,7 @@ const animes = [
       { number: 38, title: "الحلقة الثامنة والثلاثون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/spyfamily/001.mp4" },
       { number: 39, title: "الحلقة التاسعة والثلاثون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/spyfamily/002.mp4" },
       { number: 40, title: "الحلقة الأربعون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/spyfamily/003.mp4" },
-      { number: 41, title: "الحلقة الواحدة والاربعون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/spyfamily/004.mp4" }
+      { number: 41, title: "الحلقة الواحدة والاربعون", video: "https://pub-b534f19ddae84293ae0e0fb360695fcf.r2.dev/spyfamily/%D8%B9%D8%A7%D8%A6%D9%84%D8%A9%20%C3%97%20%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%20-%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%204.mp4" }
 
       
     ]
