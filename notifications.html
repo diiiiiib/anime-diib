@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-  <script src="data.js"></script>
+  <script src="series.js"></script>
   <script src="main.js"></script>
 </head>
 <body data-page="notifications">
@@ -22,9 +22,6 @@
         <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
           <i class="fas fa-bell"></i>
         </a>
-        <div class="user-profile">
-          <img id="topbar-user-avatar" data-avatar="user.png" alt="صورة المستخدم" class="user-avatar">
-        </div>
       </div>
     </div>
   </div>
@@ -138,28 +135,7 @@
     document.addEventListener('DOMContentLoaded', loadNotifications);
   </script>
   <script>
-    // تحديث صورة المستخدم في الشريط العلوي
-    function updateUserAvatar() {
-      const topbarAvatar = document.getElementById('topbar-user-avatar');
-      const savedUser = localStorage.getItem('userData');
-      const userData = savedUser ? JSON.parse(savedUser) : null;
-      
-      if (userData && userData.avatar) {
-        if (topbarAvatar) {
-          topbarAvatar.src = userData.avatar;
-          topbarAvatar.setAttribute('data-avatar', userData.avatar);
-        }
-      } else {
-        if (topbarAvatar) {
-          topbarAvatar.src = '';
-          topbarAvatar.setAttribute('data-avatar', 'user.png');
-        }
-      }
-    }
-    
-    // تحديث الصورة عند تحميل الصفحة
     document.addEventListener('DOMContentLoaded', function() {
-      updateUserAvatar();
       if (typeof initTheme === 'function') {
         initTheme();
       }
