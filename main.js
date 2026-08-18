@@ -386,6 +386,9 @@ function initPage() {
     case 'notifications':
       // Notifications page handled through inline scripts
       break;
+    case 'settings':
+    case 'app':
+      break;
     default:
       renderHomePage();
   }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="إعدادات التطبيق في ANIME_DIIB لتخصيص التجربة حسب رغبتك.">
+  <title>الإعدادات - ANIME_DIIB</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body data-page="settings">
+  <div class="app-topbar">
+    <div class="container topbar-content">
+      <a href="index.html" class="topbar-logo">
+        <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
+        <span>ANIME_DIIB</span>
+      </a>
+      <div class="topbar-actions">
+        <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
+          <i class="fas fa-bell"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <h1><i class="fas fa-gear" style="margin-left: 0.5rem;"></i>الإعدادات</h1>
+      </div>
+
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>الوضع الداكن</h3>
+            <p>بدّل بين الواجهة الفاتحة والداكنة حسب تفضيلك.</p>
+          </div>
+          <label class="toggle-switch" aria-label="تبديل الوضع الداكن">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>جودة الفيديو</h3>
+            <p>اختر جودة التشغيل المناسبة لسرعة اتصالك.</p>
+          </div>
+          <select id="video-quality" class="setting-select" aria-label="حدد جودة الفيديو">
+            <option value="auto">تلقائي</option>
+            <option value="hd">HD</option>
+            <option value="sd">SD</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>الإشعارات</h3>
+            <p>تفعيل التنبيهات اليومية حول الأنميات الجديدة والتحديثات.</p>
+          </div>
+          <label class="toggle-switch" aria-label="تبديل الإشعارات">
+            <input type="checkbox" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="help-links" style="margin-top: 2rem;">
+        <a href="index.html" class="help-item">
+          <i class="fas fa-home"></i>
+          <div class="help-text">
+            <h4>الرئيسية</h4>
+            <p>العودة إلى الصفحة الرئيسية واستكشاف أحدث العروض.</p>
+          </div>
+          <i class="fas fa-angle-left"></i>
+        </a>
+        <a href="app.html" class="help-item">
+          <i class="fas fa-mobile-screen-button"></i>
+          <div class="help-text">
+            <h4>التطبيق</h4>
+            <p>اعرف أمان التطبيق وكيفية تحميله بسهولة.</p>
+          </div>
+          <i class="fas fa-angle-left"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home nav-icon"></i>
+      <span class="nav-label">الرئيسية</span>
+    </a>
+    <a href="anime.html" class="nav-item">
+      <i class="fas fa-tv nav-icon"></i>
+      <span class="nav-label">مسلسلات</span>
+    </a>
+    <a href="movie.html" class="nav-item">
+      <i class="fas fa-film nav-icon"></i>
+      <span class="nav-label">أفلام</span>
+    </a>
+    <a href="settings.html" class="nav-item active">
+      <i class="fas fa-gear nav-icon"></i>
+      <span class="nav-label">الإعدادات</span>
+    </a>
+    <a href="app.html" class="nav-item">
+      <i class="fas fa-mobile-screen-button nav-icon"></i>
+      <span class="nav-label">التطبيق</span>
+    </a>
+  </nav>
+
+  <script src="main.js"></script>
+  <script>
+    const themeToggle = document.getElementById('dark-mode-toggle');
+    const qualitySelect = document.getElementById('video-quality');
+
+    if (themeToggle) {
+      const savedTheme = localStorage.getItem('animeTheme') || 'dark';
+      themeToggle.checked = savedTheme === 'dark';
+      themeToggle.addEventListener('change', () => {
+        const nextTheme = themeToggle.checked ? 'dark' : 'light';
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem('animeTheme', nextTheme);
+      });
+    }
+
+    if (qualitySelect) {
+      const savedQuality = localStorage.getItem('animeVideoQuality') || 'auto';
+      qualitySelect.value = savedQuality;
+      qualitySelect.addEventListener('change', () => {
+        localStorage.setItem('animeVideoQuality', qualitySelect.value);
+      });
+    }
+  </script>
+</body>
+</html>
