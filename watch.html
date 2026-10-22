@@ -11,18 +11,15 @@
 
 </head>
 <body data-page="watch">
-  <div class="app-topbar">
-    <div class="container topbar-content">
-      <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
-      <span class="topbar-tagline">موقعك المفضل لمشاهدة الأنمي</span>
-      <div class="topbar-actions">
-        <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
-          <i class="fas fa-bell"></i>
-        </a>
-      </div>
+  <header class="watch-topbar">
+    <div class="container watch-topbar-content">
+      <a href="index.html" class="watch-app-icon" aria-label="العودة إلى الرئيسية">
+        <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
+      </a>
+      <h1 id="episode-title" class="watch-topbar-title"></h1>
     </div>
-  </div>
-<hr style="border: 2px solid #3498db; width: 100%;">
+  </header>
+  <hr style="border: 2px solid #3498db; width: 100%;">
     <script>
   atOptions = {
     'key' : '5d5ede8a234cbbc5e66bf3fba209a79e',
@@ -33,9 +30,6 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/5d5ede8a234cbbc5e66bf3fba209a79e/invoke.js">  </script>
-  
-  <hr style="border: 2px solid #3498db; width: 100%;">
-  
   <main class="container watch-container">
     <div class="video-section">
       <div class="video-wrapper">
@@ -43,23 +37,8 @@
           <p>متصفحك لا يدعم تشغيل الفيديو.</p>
         </video>
       </div>
-
-      <div class="video-info">
-        <h2 id="episode-title" class="video-title"></h2>
-        <div class="video-actions">
-          <button id="share-facebook" class="action-btn" aria-label="مشاركة على فيسبوك">
-            <i class="fab fa-facebook-f"></i> فيسبوك
-          </button>
-          <button id="share-whatsapp" class="action-btn" aria-label="مشاركة على واتساب">
-            <i class="fab fa-whatsapp"></i> واتساب
-          </button>
-          <button id="share-copy" class="action-btn" aria-label="نسخ الرابط">
-            <i class="fas fa-link"></i> نسخ الرابط
-          </button>
-        </div>
-      </div>
     </div>
-<hr style="border: 2px solid #3498db; width: 100%;">
+
 <script>
   atOptions = {
     'key' : 'ecc9f477ccb9036606a4d34a3692b73d',
@@ -70,8 +49,8 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/ecc9f477ccb9036606a4d34a3692b73d/invoke.js"></script>
+
     <div class="episodes-sidebar">
-      <h3 class="section-title">الحلقات</h3>
       <div id="episodes-list" class="episodes-list"></div>
     </div>
   </main>
@@ -93,10 +72,6 @@
       <i class="fas fa-film nav-icon"></i>
       <span class="nav-label">أفلام</span>
     </a>
-    <a href="settings.html" class="nav-item">
-      <i class="fas fa-gear nav-icon"></i>
-      <span class="nav-label">الإعدادات</span>
-    </a>
     <a href="app.html" class="nav-item">
       <i class="fas fa-mobile-screen-button nav-icon"></i>
       <span class="nav-label">التطبيق</span>
@@ -108,13 +83,6 @@
   <script src="performance.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 

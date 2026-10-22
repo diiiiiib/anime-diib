@@ -3,7 +3,7 @@
 
 const movies = [
   {
-    id: 21,
+    id: "a",
     title: "القلعة اللانهاية",
     type: "movie",
     cover: "https://pbs.twimg.com/media/GwT6K7QXoAAIIl6.jpg",
@@ -17,7 +17,7 @@ const movies = [
     ]
   },
   {
-    id: 22,
+    id: "b",
     title: "المهمة الاخيرة",
     type: "movie",
     cover: "https://www.arabic-toons.com/images/anime/film_36804.jpg",
@@ -34,7 +34,7 @@ const movies = [
     ]
   },
   {
-    id: 23,
+    id: "c",
     title: "Phantom rouge",
     type: "movie",
     cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVVvFTZLn3GNxD5SVCGyaQsQbs9_EuLFnrgqb_zORGyKXICYGMHTyF7dehVAczych1GbPDA&s=10",
@@ -51,7 +51,7 @@ const movies = [
     ]
   },
   {
-    id: 24,
+    id: "d",
     title: "قطار اللانهاية",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/thumb/0/01/%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg/250px-%D9%82%D8%A7%D8%AA%D9%84_%D8%A7%D9%84%D8%B4%D9%8A%D8%A7%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D9%81%D9%8A%D9%84%D9%85_%D9%82%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%84%D8%A7%D9%86%D9%87%D8%A7%D9%8A%D8%A9.jpg",
@@ -65,7 +65,7 @@ const movies = [
     ]
   },
   {
-    id: 25,
+    id: "e",
     title: "هجوم العمالقة",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/2/27/%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9_%28%D9%81%D9%8A%D9%84%D9%85%29_%D9%85%D9%84%D8%B5%D9%82.jpeg",
@@ -79,7 +79,7 @@ const movies = [
     ]
   },
   {
-    id: 26,
+    id: "f",
     title: "رحلة الى أغارثا",
     type: "movie",
     cover: "https://images.justwatch.com/poster/73412707/s718/children-who-chase-lost-voices.jpg",
@@ -93,7 +93,7 @@ const movies = [
     ]
   },
   {
-    id: 27,
+    id: "g",
     title: "ماكيا : الزهرة الموعودة",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/a/a8/SayoAsa_Theatrical_Release_Poster.jpg",
@@ -107,7 +107,7 @@ const movies = [
     ]
   },
   {
-    id: 28,
+    id: "h",
     title: "شبح الصيف",
     type: "movie",
     cover: "https://m.media-amazon.com/images/M/MV5BZTBhNTkxOWEtYjlmNy00ODI4LWE1MWQtZDU3M2E3ZGRmMDkwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
@@ -121,7 +121,7 @@ const movies = [
     ]
   },
   {
-    id: 29,
+    id: "i",
     title: "دراغون بول سوبر برولي",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/1/13/DB_THE_MOVIE_NO._20.jpg",
@@ -135,7 +135,7 @@ const movies = [
     ]
   },
   {
-    id: 30,
+    id: "j",
     title: "كونان في مواجهة كايتو",
     type: "movie",
     cover: "https://a.storyblok.com/f/178900/960x1358/a5804edf13/detective-conan-vs-kaito-kid-teaser-visual-2.jpg/m/filters:quality(95)format(webp)",
@@ -149,7 +149,7 @@ const movies = [
     ]
   },
   {
-    id: 31,
+    id: "k",
     title: "ناروتو جزيرة هلال القمر",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/9/98/Naruto_3rd_Movie_Cover.jpg",
@@ -163,7 +163,7 @@ const movies = [
     ]
   },
   {
-    id: 32,
+    id: "l",
     title: "تائهان في فضاء الحب",
     type: "movie",
     cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHL1kg5AeZqxWE8oWyDajeJ5Egp6Dup3udcg&s",
@@ -177,7 +177,7 @@ const movies = [
     ]
   },
   {
-    id: 33,
+    id: "m",
     title: "المخطوفة",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/d/db/Spirited_Away_Japanese_poster.png",
@@ -191,7 +191,7 @@ const movies = [
     ]
   },
   {
-    id: 34,
+    id: "n",
     title: "الرحلة",
     type: "movie",
     cover: "https://upload.wikimedia.org/wikipedia/ar/2/28/%D8%A7%D9%84%D8%B1%D8%AD%D9%84%D8%A9_%28%D9%81%D9%8A%D9%84%D9%85_2021%29.jpg",
@@ -205,7 +205,7 @@ const movies = [
     ]
   },
   {
-    id: 35,
+    id: "o",
     title: "اسمك",
     type: "movie",
     cover: "https://m.media-amazon.com/images/I/71YoxjSxCEL._SL1500_.jpg",
@@ -223,7 +223,7 @@ const movies = [
 
 // دالة للحصول على فيلم بواسطة المعرف
 function getMovieById(id) {
-  return movies.find(movie => movie.id === parseInt(id));
+  return movies.find(movie => String(movie.id) === String(id));
 }
 
 // دالة للحصول على جميع الأفلام

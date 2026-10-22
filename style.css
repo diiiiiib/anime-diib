@@ -97,13 +97,13 @@ body {
 
 /* الشريط العلوي */
 .app-topbar {
-    background: linear-gradient(90deg, #ff0000 0%, #008000 50%, #00008b 100%);
+    background: rgba(12, 16, 35, 0.96);
     color: white;
     padding: var(--spacing-md) 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 28px rgba(10, 14, 31, 0.16);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -140,16 +140,36 @@ body {
     border-radius: 8px;
 }
 
-.topbar-tagline {
-    font-size: 0.875rem;
-    opacity: 0.9;
-    display: none;
-}
-
     .topbar-actions {
         display: flex;
         align-items: center;
         gap: 0.75rem;
+    }
+
+    .topbar-search {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .topbar-search-input {
+        width: min(36vw, 280px);
+        height: 40px;
+        padding: 0.5rem 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .topbar-search-input::placeholder {
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .topbar-search-input:focus {
+        border-color: rgba(196, 181, 253, 0.8);
+        box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.16);
     }
 
     .topbar-icon {
@@ -360,6 +380,8 @@ header {
 
 /* بطاقة الأنمي */
 .anime-card {
+    display: flex;
+    flex-direction: column;
     background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
@@ -369,6 +391,13 @@ header {
     position: relative;
     opacity: 0;
     transform: translateY(16px);
+    color: inherit;
+    text-decoration: none;
+}
+
+.anime-card:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 3px;
 }
 
 .anime-card.visible {
@@ -386,26 +415,37 @@ header {
     height: 300px; /* Fixed height for consistent card sizes */
     object-fit: contain; /* Show full image without cropping */
     background: var(--bg-tertiary);
+    flex-shrink: 0;
 }
 
 .anime-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: var(--spacing-md);
 }
 
 .anime-card-title {
+    display: -webkit-box;
+    min-height: 2.9em;
+    overflow: hidden;
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
-    overflow: hidden;
+    line-height: 1.45;
+    text-decoration: none;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .anime-card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: auto;
     font-size: 0.875rem;
     color: var(--text-secondary);
 }
@@ -572,55 +612,61 @@ header {
 /* صفحة التفاصيل */
 .details-header {
     position: relative;
-    background: var(--bg-primary);
-    padding: var(--spacing-xl) 0;
+    display: flex;
+    min-height: clamp(390px, 46vw, 570px);
+    align-items: center;
+    padding-block: clamp(2.5rem, 7vw, 5rem);
+    background: #0b1020;
     overflow: hidden;
 }
 
 .details-background {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.1;
     z-index: 0;
+    object-position: center 35%;
+}
+
+.details-header::after {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background:
+        linear-gradient(0deg, rgba(8, 11, 27, 0.72), transparent 45%),
+        linear-gradient(90deg, rgba(8, 11, 27, 0.08) 0%, rgba(8, 11, 27, 0.48) 48%, rgba(8, 11, 27, 0.92) 100%);
+    content: "";
 }
 
 .details-content {
     position: relative;
     z-index: 1;
-    display: flex;
-    gap: var(--spacing-xl);
-    align-items: flex-start;
-}
-
-.details-cover {
-    width: 300px;
-    aspect-ratio: 2/3;
-    object-fit: cover;
-    border-radius: var(--border-radius-xl);
-    box-shadow: var(--shadow-xl);
-    flex-shrink: 0;
+    width: 100%;
 }
 
 .details-info {
-    flex: 1;
+    max-width: 680px;
+    margin-inline-start: auto;
+    color: #fff;
 }
 
 .details-title {
-    font-size: 2rem;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
 }
 
 .details-meta {
     display: flex;
-    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: 0.7rem;
     align-items: center;
-    margin-bottom: var(--spacing-md);
-    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .anime-rating {
@@ -633,55 +679,162 @@ header {
 .details-genre {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
+    gap: 0.5rem;
+    margin-bottom: 1.1rem;
 }
 
 .genre-tag {
-    background: var(--bg-tertiary);
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--border-radius-lg);
-    font-size: 0.875rem;
-    color: var(--text-secondary);
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.48);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.82rem;
+    backdrop-filter: blur(8px);
 }
 
 .details-description {
-    color: var(--text-secondary);
-    line-height: 1.8;
+    max-width: 62ch;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.9;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
 }
 
 /* قسم الحلقات */
 .episodes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 0.8rem;
 }
 
 .episode-card {
-    background: var(--bg-primary);
-    border: 2px solid var(--bg-tertiary);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
+    display: flex;
+    min-height: 5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.75rem 0.6rem;
+    border: 1px solid rgba(148, 163, 184,  0.16);
+    border-radius: 0.85rem;
+    background: rgba(148, 163, 184, 0.07);
+    color: var(--text-primary);
     text-align: center;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    text-decoration: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .episode-card:hover {
-    border-color: var(--primary-color);
-    background: var(--bg-secondary);
+    transform: translateY(-2px);
+    border-color: rgba(196, 181, 253, 0.42);
+    background: rgba(167, 139, 250, 0.12);
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 .episode-number {
-    font-size: 1.25rem;
+    color: #c4b5fd;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: var(--primary-color);
+    line-height: 1.2;
 }
 
 .episode-title {
-    font-size: 0.875rem;
+    max-width: 100%;
+    margin-top: 0;
+    overflow: hidden;
     color: var(--text-secondary);
-    margin-top: var(--spacing-xs);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body[data-page="details"] .episode-number {
+    color: #c4b5fd;
+}
+
+body[data-page="details"] .episode-title {
+    color: var(--text-secondary);
+    opacity: 1;
+}
+
+.episode-card:focus-visible {
+    outline: 2px solid #c4b5fd;
+    outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+    .details-header {
+        min-height: clamp(320px, 36vh, 420px);
+        padding-block: clamp(1.25rem, 3.5vh, 2.5rem);
+    }
+
+    .details-background {
+        object-position: center 30%;
+    }
+
+    .details-header::after {
+        background:
+            linear-gradient(0deg, rgba(8, 11, 27, 0.32), transparent 38%),
+            linear-gradient(90deg, rgba(8, 11, 27, 0.04), rgba(8, 11, 27, 0.12) 48%, rgba(8, 11, 27, 0.3));
+    }
+
+    .details-info {
+        width: min(52%, 720px);
+        max-width: 720px;
+        margin-inline-start: 0;
+        padding: clamp(2rem, 3.5vw, 3.5rem);
+        border: 1px solid rgba(255, 255, 255, 0.38);
+        border-inline-start: 3px solid rgba(248, 250, 252, 0.72);
+        border-radius: 1.25rem 0 0 1.25rem;
+        background: linear-gradient(
+            270deg,
+            rgba(226, 232, 240, 0.9) 0%,
+            rgba(203, 213, 225, 0.84) 66%,
+            rgba(148, 163, 184, 0.58) 100%
+        );
+        box-shadow: 0 18px 48px rgba(8, 11, 27, 0.2);
+        backdrop-filter: blur(5px);
+        color: #172033;
+    }
+
+    .details-title {
+        max-width: 14ch;
+        font-size: clamp(3rem, 4.2vw, 5rem);
+        margin-bottom: 1.35rem;
+        color: #111827;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.42);
+    }
+
+    .details-meta {
+        gap: 1rem;
+        margin-bottom: 1.35rem;
+        font-size: 1.05rem;
+        color: #334155;
+    }
+
+    .details-genre {
+        gap: 0.65rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .genre-tag {
+        padding: 0.45rem 0.9rem;
+        border-color: rgba(71, 85, 105, 0.28);
+        background: rgba(248, 250, 252, 0.38);
+        color: #263449;
+        font-size: 0.9rem;
+    }
+
+    .details-description {
+        max-width: 56ch;
+        color: #263449;
+        font-size: clamp(1.05rem, 1.15vw, 1.25rem);
+        line-height: 2;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
 }
 
 /* صفحة المشاهدة */
@@ -691,11 +844,8 @@ header {
     gap: var(--spacing-lg);
 }
 
-.video-section {
-    background: var(--bg-primary);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-lg);
-    box-shadow: var(--shadow-lg);
+body[data-page="watch"] .video-section {
+    min-width: 0;
 }
 
 .video-wrapper {
@@ -720,10 +870,43 @@ video {
     gap: var(--spacing-md);
 }
 
-.video-title {
-    font-size: 1.5rem;
+.watch-topbar-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1.1rem, 2.1vw, 1.4rem);
     font-weight: 700;
-    color: var(--text-primary);
+    line-height: 1.35;
+    text-align: start;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.watch-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-block: 0.65rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(12, 16, 35, 0.96);
+    box-shadow: 0 8px 28px rgba(10, 14, 31, 0.16);
+    backdrop-filter: blur(10px);
+    text-align: start;
+}
+
+.watch-topbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.watch-app-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
 }
 
 .video-actions {
@@ -759,8 +942,11 @@ video {
     box-shadow: var(--shadow-lg);
 }
 
-.episodes-sidebar .section-title {
-    color: var(--text-primary);
+body[data-page="watch"] .episodes-sidebar {
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .episodes-list {
@@ -795,6 +981,71 @@ video {
 .episode-item.active {
     background: var(--primary-color);
     color: white;
+}
+
+body[data-page="watch"] .episodes-list {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+    padding: 0.15rem;
+}
+
+body[data-page="watch"] .episode-item {
+    display: flex;
+    min-height: 4.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.65rem 0.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 0.85rem;
+    background: rgba(148, 163, 184, 0.07);
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+body[data-page="watch"] .episode-number {
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+body[data-page="watch"] .episode-title {
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body[data-page="watch"] .episode-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(196, 181, 253, 0.42);
+    background: rgba(167, 139, 250, 0.12);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+body[data-page="watch"] .episode-item.active {
+    border-color: rgba(196, 181, 253, 0.58);
+    background: rgba(167, 139, 250, 0.16);
+    color: #ddd6fe;
+    box-shadow: inset 0 0 0 1px rgba(196, 181, 253, 0.08);
+    text-decoration: none;
+}
+
+body[data-page="watch"] .episode-item.active .episode-title {
+    color: #cbd5e1;
+    opacity: 1;
+}
+
+body[data-page="watch"] .episode-item:focus-visible {
+    outline: 2px solid #c4b5fd;
+    outline-offset: 2px;
 }
 
 /* زر العودة للأعلى */
@@ -1073,14 +1324,6 @@ video {
 
 /* التجاوب مع الشاشات الصغيرة */
 @media (min-width: 768px) {
-    .topbar-tagline {
-        display: inline;
-    }
-
-    .details-content {
-        flex-direction: row;
-    }
-
     .watch-container {
         grid-template-columns: 2fr 1fr;
     }
@@ -1100,38 +1343,29 @@ video {
         gap: var(--spacing-md);
     }
 
-    .details-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .details-cover {
-        width: 200px;
+    .details-header {
+        min-height: clamp(360px, 82vw, 500px);
+        padding-block: 2.5rem;
     }
 
     .details-title {
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
     }
 
     .details-meta {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .details-genre {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .details-description {
-        text-align: center;
+        text-align: start;
     }
 
     .episodes-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-
-    .video-actions {
-        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
     }
 }
 
@@ -1237,6 +1471,339 @@ button:focus {
     padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
     margin: var(--spacing-md) 0;
+}
+
+/* الصفحة الرئيسية */
+body[data-page="index"] {
+    --home-ink: #10152b;
+    --home-accent: #a78bfa;
+}
+
+body[data-page="index"] header {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0 2rem;
+    color: #fff;
+    text-align: right;
+    background:
+        radial-gradient(ellipse at 12% 20%, rgba(99, 102, 241, 0.22), transparent 38%),
+        linear-gradient(135deg, #11162e 0%, #171b3b 54%, #211e4b 100%);
+}
+
+body[data-page="index"] header::after {
+    position: absolute;
+    inset-inline-end: -7rem;
+    bottom: -12rem;
+    width: 28rem;
+    height: 28rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+body[data-page="index"] .header-content {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    gap: 0;
+}
+
+body[data-page="index"] .search-container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+body[data-page="index"] .search-input {
+    min-height: 50px;
+    padding-inline-start: 3.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(4, 7, 22, 0.18);
+    backdrop-filter: blur(12px);
+}
+
+body[data-page="index"] .search-input::placeholder {
+    color: rgba(238, 240, 255, 0.58);
+}
+
+body[data-page="index"] .search-input:focus {
+    border-color: rgba(196, 181, 253, 0.8);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.16);
+}
+
+body[data-page="index"] .search-icon {
+    inset-inline-end: auto;
+    inset-inline-start: 1.1rem;
+    color: #d8d2ff;
+}
+
+.home-main {
+    padding-top: 0.75rem;
+}
+
+.home-discover {
+    margin-top: 0;
+}
+
+.home-carousel-viewport {
+    overflow: hidden;
+}
+
+.home-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    gap: clamp(0.65rem, 1.5vw, 1rem);
+    direction: rtl;
+    overscroll-behavior-inline: contain;
+    padding-block: 0.2rem 0.65rem;
+    scroll-padding-inline: 0;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.home-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+body[data-page="index"] .home-carousel-card {
+    position: relative;
+    display: flex;
+    flex: 0 0 60%;
+    height: clamp(250px, 30vw, 360px);
+    min-width: 0;
+    justify-content: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 26px rgba(4, 7, 22, 0.18);
+    isolation: isolate;
+    scroll-snap-align: start;
+}
+
+body[data-page="index"] .home-carousel-card:hover {
+    border-color: rgba(196, 181, 253, 0.45);
+}
+
+body[data-page="index"] .home-carousel-card .anime-card-image {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+body[data-page="index"] .home-carousel-card::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(8, 11, 27, 0.96) 0%, rgba(8, 11, 27, 0.66) 30%, rgba(8, 11, 27, 0.08) 76%);
+    content: "";
+}
+
+body[data-page="index"] .home-carousel-card .anime-card-content {
+    width: 100%;
+    flex: 0 0 auto;
+    padding: 3rem clamp(1rem, 3vw, 2rem) 1.25rem;
+    color: #fff;
+}
+
+body[data-page="index"] .home-carousel-card .anime-card-title {
+    min-height: auto;
+    margin-bottom: 0.55rem;
+    color: #fff;
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
+    line-height: 1.35;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+body[data-page="index"] .home-carousel-card .anime-card-meta {
+    color: rgba(238, 240, 255, 0.7);
+    font-size: 0.95rem;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.home-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+}
+
+.home-carousel-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: width var(--transition-fast), background var(--transition-fast);
+}
+
+.home-carousel-dot.active {
+    width: 22px;
+    background: #c4b5fd;
+}
+
+.home-featured-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1000px) {
+    .home-featured-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.home-section {
+    padding-block: 2.1rem 0.5rem;
+}
+
+.home-section .section-title {
+    justify-content: flex-start;
+    margin-bottom: 1.1rem;
+    font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+
+.section-caption {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    font-weight: 400;
+}
+
+.home-section .view-all {
+    margin-inline-start: auto;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid var(--bg-tertiary);
+    border-radius: 0.65rem;
+    white-space: nowrap;
+}
+
+.home-section .view-all:hover {
+    border-color: var(--primary-light);
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.home-card-rail {
+    display: grid;
+    grid-auto-columns: minmax(170px, 205px);
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0.3rem 0.15rem 1.2rem;
+    scroll-padding-inline: 0.15rem;
+    scroll-snap-type: inline mandatory;
+    scrollbar-color: var(--bg-tertiary) transparent;
+    scrollbar-width: thin;
+}
+
+body[data-page="index"] .home-featured-grid .anime-card {
+    scroll-snap-align: none;
+}
+
+body[data-page="index"] .anime-card {
+    scroll-snap-align: start;
+    border: 1px solid rgba(100, 116, 139, 0.12);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+body[data-page="index"] .anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.15);
+}
+
+body[data-page="index"] .anime-card-image {
+    display: block;
+    height: auto;
+    aspect-ratio: 2 / 2.75;
+    object-fit: cover;
+    transition: transform 350ms ease;
+}
+
+body[data-page="index"] .anime-card:hover .anime-card-image {
+    transform: scale(1.035);
+}
+
+body[data-page="index"] .anime-card-content {
+    padding: 0.8rem 0.85rem 0.9rem;
+}
+
+body[data-page="index"] .anime-card-title {
+    margin-bottom: 0.45rem;
+}
+
+body[data-page="index"] .home-carousel-card .anime-card-title {
+    min-height: 2.9em;
+}
+
+@media (max-width: 767px) {
+    body[data-page="index"] header {
+        padding-block: 0.75rem 1.65rem;
+    }
+
+    body[data-page="index"] .home-main {
+        padding-inline: 0.85rem;
+    }
+
+    body[data-page="index"] .home-carousel-card {
+        flex-basis: 72%;
+        height: clamp(140px, 45vw, 240px);
+    }
+
+    body[data-page="index"] .home-carousel-card .anime-card-content {
+        padding: 2.5rem 1rem 1rem;
+    }
+
+    body[data-page="index"] .home-carousel-card .anime-card-title {
+        font-size: 1.35rem;
+    }
+
+    .home-featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-section {
+        padding-top: 1.7rem;
+    }
+
+    .home-section .section-title {
+        flex-wrap: wrap;
+        gap: 0.45rem 0.65rem;
+    }
+
+    .section-caption {
+        display: none;
+    }
+
+    .home-card-rail {
+        grid-auto-columns: minmax(145px, 42vw);
+        gap: 0.75rem;
+    }
+
+        body[data-page="anime"] .topbar-search-input,
+        body[data-page="movie"] .topbar-search-input {
+            width: clamp(90px, 25vw, 150px);
+        }
+
+        body[data-page="anime"] .topbar-content.is-search-open .topbar-logo span,
+        body[data-page="movie"] .topbar-content.is-search-open .topbar-logo span {
+            display: none;
+        }
+    }
+
+@media (prefers-reduced-motion: reduce) {
+    .home-card-rail {
+        scroll-behavior: auto;
+    }
 }
 
 /* رسائل التحذير */

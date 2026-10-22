@@ -12,9 +12,17 @@
 <body data-page="anime">
   <div class="app-topbar">
     <div class="container topbar-content">
-      <a href="index.html" class="topbar-logo">ANIME_DIIB</a>
-      <span class="topbar-tagline">استكشف أحدث المسلسلات</span>
+      <a href="index.html" class="topbar-logo">
+        <img src="logo.png" alt="ANIME_DIIB" class="topbar-logo-img">
+        <span>مسلسلات</span>
+      </a>
       <div class="topbar-actions">
+        <div class="topbar-search">
+          <input type="search" id="search-input" class="topbar-search-input" placeholder="ابحث عن مسلسل..." aria-label="ابحث عن مسلسل" aria-hidden="true" hidden>
+          <button class="topbar-icon" type="button" data-toggle-search aria-label="فتح البحث" aria-controls="search-input" aria-expanded="false">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
         <a href="notifications.html" class="topbar-icon" aria-label="الإشعارات">
           <i class="fas fa-bell"></i>
         </a>
@@ -22,20 +30,8 @@
     </div>
   </div>
 
-  <header>
-    <div class="container header-content">
-      <h1 class="logo">المسلسلات</h1>
-    
-      <div class="search-container">
-        <input type="text" id="search-input" class="search-input" placeholder="ابحث عن مسلسل...">
-        <i class="fas fa-search search-icon" aria-hidden="true"></i>
-      </div>
-    </div>
-  </header>
-
   <main class="container">
     <section class="section">
-      <h2 id="page-title" class="section-title">المسلسلات</h2>
       <div id="category-container" class="cards-grid"></div>
     </section>
   </main>
@@ -56,10 +52,6 @@
     <a href="movie.html" class="nav-item">
       <i class="fas fa-film nav-icon"></i>
       <span class="nav-label">أفلام</span>
-    </a>
-    <a href="settings.html" class="nav-item">
-      <i class="fas fa-gear nav-icon"></i>
-      <span class="nav-label">الإعدادات</span>
     </a>
     <a href="app.html" class="nav-item">
       <i class="fas fa-mobile-screen-button nav-icon"></i>
