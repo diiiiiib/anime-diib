@@ -441,6 +441,10 @@ async function renderDetailsPage() {
   }
 
   document.title = `${anime.title} - تفاصيل - ANIME_DIIB`;
+  const topbarPageTitle = document.getElementById('topbar-page-title');
+  if (topbarPageTitle) {
+    topbarPageTitle.textContent = anime.type === 'movie' ? 'معلومات الفيلم' : 'معلومات المسلسل';
+  }
   loadImageWithFallback(document.getElementById('anime-background'), anime.background || anime.cover);
   document.getElementById('anime-title').textContent = anime.title;
   document.getElementById('anime-year').textContent = anime.year;

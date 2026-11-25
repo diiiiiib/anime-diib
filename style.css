@@ -362,6 +362,66 @@ header {
     opacity: 0.7;
 }
 
+.support-notice {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-block: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-tertiary);
+    border-right: 4px solid var(--warning);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.support-notice-icon {
+    flex: 0 0 auto;
+    color: var(--warning);
+    font-size: 1.35rem;
+}
+
+.support-notice-content {
+    flex: 1;
+}
+
+.support-notice-content h2,
+.app-download-card h2 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.support-notice-content p,
+.app-download-card p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.support-notice-link {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 0.65rem 1rem;
+    border-radius: var(--border-radius-md);
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.support-notice-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.support-notice-link:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 3px;
+}
+
 .empty-state {
     padding: var(--spacing-2xl);
     text-align: center;
@@ -1189,6 +1249,12 @@ body[data-page="watch"] .episode-item:focus-visible {
     line-height: 1.2;
 }
 
+.app-download-content h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
 .app-meta {
     margin-top: 0.7rem;
     color: var(--text-secondary);
@@ -1990,6 +2056,17 @@ body[data-page="index"] .home-carousel-card .anime-card-title {
     font-size: 0.875rem;
     color: var(--text-secondary);
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    .support-notice {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .support-notice-link {
+        width: 100%;
+    }
 }
 
 /* Select والـ Toggle */

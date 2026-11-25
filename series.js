@@ -373,6 +373,28 @@ const animes = [
     genre: ["رومانسي", "كوميديا"],
     rating: "8.2",
     year: "2021"
+  },
+{
+    id: 36,
+    title: "بلاك كلوفر",
+    type: "series",
+    cover: "https://cdn.myanimelist.net/images/anime/2/88336.jpg",
+    background: "https://cdn.myanimelist.net/images/anime/2/88336.jpg",
+    description: "يتنافس أستا ويونو ليصبح أحدهما إمبراطور السحر في عالم يعتمد على السحر.",
+    genre: ["أكشن", "مغامرة", "خيال"],
+    rating: "8.1",
+    year: "2017"
+  },
+{
+    id: 37,
+    title: "إينيوشا",
+    type: "series",
+    cover: "https://upload.wikimedia.org/wikipedia/en/9/99/INUYASHATVAnimePoster.jpg",
+    background: "https://upload.wikimedia.org/wikipedia/en/9/99/INUYASHATVAnimePoster.jpg",
+    description: "تسافر كاغومي عبر الزمن وتلتقي بإينيوشا، فينطلقان معاً للبحث عن شظايا جوهرة شيكون.",
+    genre: ["أكشن", "مغامرة", "رومانسي"],
+    rating: "7.9",
+    year: "2000"
   }
 ];
 

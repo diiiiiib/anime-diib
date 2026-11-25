@@ -209,7 +209,7 @@ const movies = [
     title: "اسمك",
     type: "movie",
     cover: "https://m.media-amazon.com/images/I/71YoxjSxCEL._SL1500_.jpg",
-    background: "https://m.media-amazon.com/images/I/71YoxjSxCEL._SL1500_.jpg",
+    background: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz_w0RvBxZjPuQPvKfBWxML2qgmVcd6-vVm1skNi912Q&s=10",
     description: "فيلم اسمك يروي قصة رومانسية وخيالية.",
     genre: ["رومانسي", "خيال", "دراما"],
     rating: "8.4",
